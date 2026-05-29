@@ -1,0 +1,107 @@
+---
+title: "Connect Support Tools: Zendesk, Intercom, and More"
+sidebarTitle: "Support Tools"
+description: "Sync tickets, conversations, and satisfaction scores from Zendesk, Intercom, Front, HelpDesk, Atlas, and Gorgias into Syncly."
+---
+
+Your support inbox holds some of the most direct, unfiltered customer feedback you'll ever collect. Syncly connects to your existing support tools so that every ticket, conversation thread, and CSAT response flows into the Feedback Hub automatically — no copying, no exporting, no manual tagging. Once connected, Syncly's AI immediately begins analyzing your support data alongside every other channel you've linked.
+
+## Supported Support Tools
+
+Syncly integrates with six customer support platforms out of the box:
+
+- **Zendesk** — tickets, tags, CSAT scores, agent notes
+- **Intercom** — conversations, chat messages, contact attributes
+- **Front** — shared inbox threads, labels, internal comments
+- **HelpDesk** — tickets, replies, satisfaction ratings
+- **Atlas** — support conversations, customer health signals
+- **Gorgias** — e-commerce support tickets, macros, tags
+
+## Connecting Zendesk
+
+Zendesk is the most widely used support tool among Syncly customers, so the steps below walk through it in detail. Every other supported tool follows the same one-click OAuth pattern described in [Connecting Other Support Tools](#connecting-other-support-tools).
+
+<Steps>
+  <Step title="Open the Integrations settings">
+    In Syncly, click your workspace avatar in the bottom-left corner, then navigate to **Settings → Integrations**. You'll see the full catalog of available connections.
+  </Step>
+  <Step title="Select Zendesk">
+    Locate the Zendesk card under the **Customer Support** category and click **Connect**. Syncly opens a secure authorization window.
+  </Step>
+  <Step title="Authenticate with your Zendesk account">
+    Enter your Zendesk subdomain (e.g., `yourcompany.zendesk.com`) and click **Sign in with Zendesk**. Log in with your Zendesk admin credentials and grant Syncly the requested read permissions. You'll be redirected back to Syncly automatically once authorization succeeds.
+  </Step>
+  <Step title="Choose which ticket data to sync">
+    Configure your sync preferences:
+    - **Date range** — choose a historical start date or import only tickets from today forward.
+    - **Ticket status** — select which statuses to include (open, pending, solved, closed).
+    - **Tags** — optionally filter to specific Zendesk tags if you only want a subset of tickets.
+    - **Custom fields** — pick any Zendesk custom ticket fields you want to carry over into Syncly.
+  </Step>
+  <Step title="Click Connect and let the sync run">
+    Click the **Connect** button. Syncly immediately begins importing your Zendesk data. Depending on your ticket volume and the historical date range you selected, the initial sync can take anywhere from a few minutes to a couple of hours. You'll receive an in-app notification when it completes.
+  </Step>
+</Steps>
+
+## Connecting Other Support Tools
+
+Intercom, Front, HelpDesk, Atlas, and Gorgias all use the same one-click OAuth flow described above. For each tool:
+
+1. Go to **Settings → Integrations** and find the tool's card.
+2. Click **Connect** and complete the OAuth authorization in the pop-up window.
+3. Choose your sync preferences (date range, filters).
+4. Click **Connect** — Syncly begins syncing immediately.
+
+No developer setup, API keys, or webhooks are required for any of these integrations.
+
+## What Data Gets Imported
+
+Once connected, Syncly imports the following data from your support tools:
+
+| Data Type | Description |
+|---|---|
+| **Ticket / conversation content** | The full text of customer messages and agent replies |
+| **Tags and labels** | All tags applied to the ticket in your support tool |
+| **Satisfaction scores** | CSAT ratings and any comment left by the customer |
+| **Agent notes** | Internal notes added by your support team |
+| **Ticket metadata** | Created date, resolved date, channel, ticket ID |
+
+## Sync Frequency
+
+| Sync Type | Frequency |
+|---|---|
+| New tickets and conversations | Real-time (within minutes of creation) |
+| Updates to existing tickets | Every 15 minutes |
+| Historical backfill (initial import) | One-time, runs at connection |
+| CSAT score updates | Daily at 02:00 UTC |
+
+<Note>
+**Historical data backfill:** When you first connect a support tool, Syncly imports all tickets back to the start date you configure — including closed and archived tickets. This means your AI insights are informed by your full support history, not just conversations that happen after you connect. Large accounts with years of ticket history may take up to 24 hours to complete the initial backfill; your Feedback Hub will show data progressively as the import runs.
+</Note>
+
+## Troubleshooting
+
+<Accordion title="Zendesk authentication failed or access denied">
+  This usually means the Zendesk account you used doesn't have **admin** or **agent** permissions with API access enabled. Ask your Zendesk administrator to verify that:
+  - The account has the **Administrator** role or an agent role with API access.
+  - **Token access** is enabled under Zendesk Admin → Apps & Integrations → Zendesk API.
+
+  Once permissions are confirmed, return to **Settings → Integrations**, disconnect Zendesk, and reconnect.
+</Accordion>
+
+<Accordion title="No tickets appearing after connection">
+  Check the following:
+  - Confirm the date range you selected during setup includes dates when tickets exist.
+  - Verify the tag filter you applied isn't too narrow. You can edit sync settings from **Settings → Integrations → Zendesk → Configure**.
+  - Allow up to 30 minutes for the initial import to populate in the Feedback Hub.
+
+  If tickets still don't appear after 30 minutes, open a support ticket at [support/contact](/support/contact).
+</Accordion>
+
+<Accordion title="Intercom or Front shows a 'Reconnect' warning">
+  OAuth tokens expire if you revoke Syncly's access in your support tool's connected apps settings. To fix this, click **Reconnect** on the integration card in **Settings → Integrations** and complete the OAuth flow again. Your existing data in Syncly is preserved — only new data stops flowing until you reconnect.
+</Accordion>
+
+<Accordion title="Gorgias: missing e-commerce order data">
+  Syncly imports support-related fields from Gorgias (ticket content, macros, tags) but does not import order or transaction data from your connected e-commerce platform. To include order context in your analysis, connect Syncly to your CRM and map the relevant fields there.
+</Accordion>

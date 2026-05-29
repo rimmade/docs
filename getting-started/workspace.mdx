@@ -1,0 +1,95 @@
+---
+title: "Set Up Your Syncly Workspace and Settings"
+sidebarTitle: "Workspace"
+description: "Configure your Syncly workspace name, logo, timezone, and language, and learn how Admin, Member, and Viewer roles control access across your team."
+---
+
+Your Syncly workspace is the shared environment where your entire team accesses feedback, dashboards, integrations, and AI features. Every account belongs to exactly one workspace, and all the data you connect — from Zendesk tickets to Gong call recordings — lives within it. Setting up your workspace correctly from the start ensures that your team works from consistent data, accurate time-based analysis, and a clear access structure.
+
+## Workspace Settings
+
+To access workspace settings, click your workspace name in the top-left corner of the Syncly sidebar, then select **Settings → General**.
+
+### Workspace Name
+
+Your workspace name appears in the Syncly interface, in shared dashboard links, and in exported reports. Choose a name that clearly identifies your organization — typically your company name or the name of the team using Syncly (for example, "Acme Corp" or "Acme Customer Experience").
+
+To update it, type a new name in the **Workspace Name** field and click **Save**.
+
+### Workspace Logo
+
+Upload your company logo to brand the Syncly workspace for your team. Your logo appears in the sidebar header and on exported reports and shared dashboards.
+
+To upload a logo:
+
+1. Go to **Settings → General**.
+2. Click **Upload Logo** next to the logo placeholder.
+3. Select a PNG or JPG file. Recommended size: 200 × 200 px or larger, square aspect ratio.
+4. Click **Save**.
+
+### Timezone
+
+Syncly uses your workspace timezone to group feedback by day, week, or month, calculate trending topics, and schedule automated Smart Briefs. Setting the correct timezone ensures that time-based analysis reflects your business hours and that reports align with your team's expectations.
+
+To set your timezone:
+
+1. Go to **Settings → General**.
+2. Open the **Timezone** dropdown and select your city or UTC offset.
+3. Click **Save**.
+
+<Tip>
+  Set your workspace timezone to the location where your core team works — or to where the majority of your customers are based — before you start building dashboards or running trend analysis. Changing the timezone later shifts how historical data is bucketed, which can cause metrics to appear to change unexpectedly.
+</Tip>
+
+### Default Language
+
+The default language setting controls the language Syncly uses for AI-generated labels, auto-tags, Smart Briefs, and the Hey Syncly chat interface. Set this to the primary language your customers write feedback in so that AI features perform at their best.
+
+To set the default language:
+
+1. Go to **Settings → General**.
+2. Open the **Default Language** dropdown and select a language.
+3. Click **Save**.
+
+Syncly supports feedback in multiple languages regardless of this setting — the default language simply guides the AI's primary processing behavior.
+
+## User Roles
+
+Syncly uses three roles to control what each team member can see and do within the workspace. You assign a role to each person when you invite them, and Admins can update roles at any time.
+
+| Capability | Admin | Member | Viewer |
+|---|:---:|:---:|:---:|
+| View feedback and dashboards | ✅ | ✅ | ✅ |
+| Filter and search feedback | ✅ | ✅ | ✅ |
+| Use Hey Syncly AI chat | ✅ | ✅ | ✅ |
+| Create and edit dashboards | ✅ | ✅ | ❌ |
+| Create and edit tags | ✅ | ✅ | ❌ |
+| Manage integrations | ✅ | ❌ | ❌ |
+| Invite and remove team members | ✅ | ❌ | ❌ |
+| Manage roles | ✅ | ❌ | ❌ |
+| Access billing and subscription settings | ✅ | ❌ | ❌ |
+| Configure workspace settings | ✅ | ❌ | ❌ |
+
+**Admin** — Admins have full control over the workspace, including settings, integrations, team management, and billing. Assign the Admin role only to people who should manage the platform itself, not just use it.
+
+**Member** — Members can do everything related to working with customer data: viewing and filtering feedback, creating dashboards, building tag taxonomies, and using all AI features. This is the right role for most of your team — analysts, customer success managers, product managers, and support leads.
+
+**Viewer** — Viewers have read-only access. They can browse feedback, view existing dashboards, and use Hey Syncly, but they can't create or edit anything. Use the Viewer role for executives or stakeholders who need visibility without the ability to change your setup.
+
+To update a team member's role:
+
+1. Go to **Settings → Team**.
+2. Find the team member in the list.
+3. Click the role badge next to their name and select a new role from the dropdown.
+4. The change takes effect immediately — no need to save separately.
+
+## Organization Settings
+
+Organization settings let Admins control platform-wide defaults that apply across the entire workspace.
+
+- **Data retention** — Set how long Syncly retains raw feedback data. Enterprise plans support custom retention periods.
+- **Default dashboard visibility** — Choose whether newly created dashboards are private by default or visible to all Members and Viewers.
+- **Notification preferences** — Configure workspace-wide defaults for Smart Brief delivery frequency and alert thresholds. Individual members can override these preferences in their personal profile settings.
+- **API access** — Generate and manage API keys for custom integrations and data exports from **Settings → Organization → API**.
+
+To access organization settings, go to **Settings → Organization**. Only Admins can view or modify these settings.

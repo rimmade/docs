@@ -1,0 +1,126 @@
+---
+title: "AI Auto-Tagging: Automatic Feedback Categorization"
+sidebarTitle: "Auto-Tagging"
+description: "Let Syncly's AI read and categorize every piece of feedback automatically. Auto-Tagging eliminates manual sorting so your team focuses on acting, not labeling."
+---
+
+Every time a new piece of feedback arrives in Syncly, the AI reads it and applies one or more tags from your taxonomy — before you ever open the Feedback Hub. Auto-Tagging removes the most time-consuming part of feedback analysis (the sorting) so your team can spend its energy on the insights themselves. The more feedback flows in, the more accurately the AI categorizes it, and the clearer the picture of your customers becomes.
+
+## How Auto-Tagging Works
+
+Syncly's tagging model reads the full text of each feedback item and matches it against the tags in your taxonomy. It considers the meaning of the text, not just keywords, so it catches nuanced phrasing and handles synonyms naturally.
+
+<Steps>
+  <Step title="Feedback arrives">
+    A new feedback item is ingested from any connected source — a support conversation, a survey response, an app store review, or any other integration.
+  </Step>
+  <Step title="AI reads and classifies">
+    Syncly's language model reads the item and identifies the topics, themes, and product areas it relates to. It then matches those themes against every tag in your taxonomy.
+  </Step>
+  <Step title="Tags are applied with confidence scores">
+    Each matched tag is applied to the feedback item along with a **confidence score** between 0 and 100. High-confidence tags (typically above 80) are applied automatically. Lower-confidence tags are applied as **suggested** and flagged for your review.
+  </Step>
+  <Step title="Feedback appears in the Hub">
+    The tagged item appears in the Feedback Hub, where you can filter by tag immediately. Tags also flow into your dashboards, Trending Topics, and Insight Explorer analyses.
+  </Step>
+</Steps>
+
+## Default Tags vs. Custom Tags
+
+Syncly ships with a set of **default tags** that cover common feedback themes across SaaS products. These give you immediate value the moment you connect your first source.
+
+<Tabs>
+  <Tab title="Default Tags">
+    Default tags are maintained by Syncly and cover broad categories such as:
+
+    - **Billing** — pricing questions, invoice issues, plan changes
+    - **Performance** — slowness, timeouts, load times
+    - **Bug** — errors, broken functionality, unexpected behavior
+    - **Feature Request** — asks for new capabilities or improvements
+    - **Onboarding** — setup, first-run experience, documentation
+    - **Integrations** — third-party connections and API issues
+    - **Support** — general help requests and escalations
+
+    Default tags cannot be deleted, but you can hide them from your active taxonomy if they are not relevant to your product.
+  </Tab>
+  <Tab title="Custom Tags">
+    Custom tags let you map feedback to the specific areas, features, and workflows that matter to your business. For example, a project management tool might create custom tags like **Timeline View**, **Task Dependencies**, or **Guest Access**.
+
+    Custom tags are created and managed in **Settings → Taxonomy**. Once you save a new tag, Syncly immediately begins applying it to incoming feedback and retroactively scores existing feedback against it.
+  </Tab>
+</Tabs>
+
+## Managing Your Tag Taxonomy
+
+Your tag taxonomy is the foundation of every filter, dashboard, and analysis in Syncly. Keep it organized and it will pay dividends across the entire platform.
+
+<Steps>
+  <Step title="Open Taxonomy settings">
+    Navigate to **Settings → Taxonomy** from the left sidebar. You'll see a list of all active tags, with columns for name, description, tag type (default or custom), and the number of feedback items currently assigned.
+  </Step>
+  <Step title="Create a new tag">
+    Click **+ New Tag**. Enter a **name** (required), an optional **description** to guide the AI, and an optional **parent tag** if you want to nest it under a broader category. A clear description significantly improves tagging accuracy, so describe what this tag should and should not capture.
+  </Step>
+  <Step title="Organize with tag groups">
+    Use **Tag Groups** to cluster related tags — for example, a group called "Core Features" containing Timeline, Boards, and Reporting tags. Groups appear as collapsible sections in the Feedback Hub's By Tag view, making navigation easier as your taxonomy grows.
+  </Step>
+  <Step title="Archive unused tags">
+    Tags you no longer need can be **archived** rather than deleted. Archived tags are removed from the active taxonomy and stop being applied to new feedback, but all historical tag assignments are preserved so your past data stays intact.
+  </Step>
+</Steps>
+
+## Reviewing and Correcting Tag Assignments
+
+The AI is accurate, but it is not infallible. Syncly makes it easy to review and correct any tag assignment.
+
+<Accordion title="Reviewing suggested tags">
+  When a feedback item has one or more tags applied with a confidence score below your review threshold, it appears in the **Needs Review** queue, accessible from the top of the Feedback Hub. Open the item, review the suggested tags, and either **confirm** or **reject** each one. Your decisions feed back into the model, improving future accuracy for similar feedback.
+</Accordion>
+
+<Accordion title="Manually correcting a tag">
+  Open any feedback item in the detail panel. In the **Tags** section, click the **×** next to any tag to remove it, or click **+ Add Tag** to apply a tag the AI missed. Corrections are logged and used to retrain the tagging model on a rolling basis.
+</Accordion>
+
+<Accordion title="Adjusting the confidence threshold">
+  Go to **Settings → Taxonomy → Tagging Settings** to adjust the confidence threshold. Raising the threshold means fewer tags are auto-applied and more end up in the review queue. Lowering it means more tags are applied automatically. Most teams find a threshold between 75 and 85 strikes the right balance.
+</Accordion>
+
+## Tag Confidence Scores
+
+Every auto-applied tag carries a confidence score that tells you how certain the AI is about the assignment.
+
+| Score Range | Meaning | Action |
+|---|---|---|
+| 90–100 | Very high confidence | Applied automatically, no review needed |
+| 75–89 | High confidence | Applied automatically by default |
+| 50–74 | Moderate confidence | Marked as suggested, added to review queue |
+| Below 50 | Low confidence | Not applied; available in raw predictions log |
+
+You can view the confidence score for any tag by hovering over it in the feedback detail panel.
+
+## How Tags Power the Rest of Syncly
+
+Tags are not just labels — they are the connective tissue that makes every other Syncly feature more powerful.
+
+<CardGroup cols={2}>
+  <Card title="Feedback Hub filtering" icon="filter">
+    Filter the Feedback Hub by any tag, or combine tags with sentiment and source filters to build highly specific views of your customer feedback.
+  </Card>
+  <Card title="Dashboards" icon="chart-bar">
+    Every dashboard widget can be scoped to one or more tags. Use tags to build product-area dashboards, team-specific views, or executive summaries.
+  </Card>
+  <Card title="Trending Topics" icon="arrow-trend-up">
+    Trending Topics tracks volume changes by tag. A sudden spike in a "Bug" or "Performance" tag is surfaced immediately so your team can respond.
+  </Card>
+  <Card title="Insight Explorer" icon="magnifying-glass-chart">
+    Use tags as the starting point for deep-dive analyses in Insight Explorer. Slice tagged feedback by time, source, or segment to understand context.
+  </Card>
+</CardGroup>
+
+<Tip>
+  Create custom tags that map directly to your product's feature areas or roadmap themes. When tags align with how your team already thinks about the product, filtering and reporting feel natural and adoption across the team increases significantly.
+</Tip>
+
+<Note>
+  Think of your taxonomy as a living map of your product, not a fixed list you set once. As your product evolves and new feedback patterns emerge, add, rename, and reorganize tags to keep the map accurate. Teams that revisit their taxonomy monthly consistently report higher tagging accuracy and more actionable insights.
+</Note>

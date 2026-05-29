@@ -1,0 +1,136 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "willow",
+  "name": "Syncly",
+  "description": "AI-powered customer intelligence suite — centralize feedback, surface insights, and grow faster.",
+  "colors": {
+    "primary": "#5d47c0",
+    "light": "#ab59a3",
+    "dark": "#f4eef5"
+  },
+  "favicon": "/favicon.ico",
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": ["copy", "view", "assistant"]
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Account Setup",
+            "pages": [
+              "getting-started/create-account",
+              "getting-started/workspace",
+              "getting-started/invite-team",
+              "getting-started/plans-billing"
+            ]
+          },
+          {
+            "group": "Connecting Data",
+            "pages": [
+              "getting-started/integrations-overview",
+              "getting-started/connect-support-tools",
+              "getting-started/connect-crm",
+              "getting-started/connect-surveys",
+              "getting-started/connect-social",
+              "getting-started/import-csv"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Using Syncly",
+        "groups": [
+          {
+            "group": "Feedback Intelligence",
+            "pages": [
+              "product/feedback-hub",
+              "product/auto-tagging",
+              "product/sentiment-analysis",
+              "product/trending-topics",
+              "product/insight-explorer"
+            ]
+          },
+          {
+            "group": "AI Features",
+            "pages": [
+              "product/hey-syncly",
+              "product/smart-brief",
+              "product/cross-analysis"
+            ]
+          },
+          {
+            "group": "Dashboards & Reports",
+            "pages": [
+              "product/dashboards",
+              "product/reports",
+              "product/automated-workflows"
+            ]
+          },
+          {
+            "group": "Syncly Social",
+            "pages": [
+              "product/social/overview",
+              "product/social/social-listening",
+              "product/social/creator-discovery",
+              "product/social/competitive-analysis",
+              "product/social/campaign-tracking"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help & Support",
+        "groups": [
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "support/faq",
+              "support/troubleshooting",
+              "support/contact"
+            ]
+          },
+          {
+            "group": "Account & Data",
+            "pages": [
+              "support/data-privacy",
+              "support/export-data",
+              "support/security"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Contact Support",
+        "href": "/support/contact"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get a Demo",
+      "href": "https://syncly.app/demo"
+    }
+  }
+}

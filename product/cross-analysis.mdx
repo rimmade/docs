@@ -1,0 +1,69 @@
+---
+title: "Cross-Analysis: Find Hidden Patterns Across Metrics"
+sidebarTitle: "Cross-Analysis"
+description: "Cross-Analysis maps relationships between two or more metrics in your customer data, helping you uncover correlations that single-metric views miss."
+---
+
+Cross-Analysis is Syncly's relationship-mapping engine that surfaces hidden patterns between two or more metrics in your customer data. Where a single chart shows you one trend in isolation, Cross-Analysis lets you overlay, compare, and correlate different signals — so you can understand not just what is happening, but how different parts of your customer experience influence each other. Use it to validate hypotheses, prioritize investigations, and bring richer context to product and business decisions.
+
+## What Cross-Analysis Does
+
+Cross-Analysis maps the relationship between a primary metric and one or more secondary metrics or dimensions over a shared time range. Syncly plots both signals on a shared timeline or scatter view, then calculates the strength and direction of their correlation. You can use this to answer questions like: "Does support volume spike after we ship new features?" or "Are customers who mention billing issues more likely to show churn signals?"
+
+## Example Use Cases
+
+Cross-Analysis is most valuable when you have a pattern you want to explain — or a relationship you suspect but haven't confirmed.
+
+<CardGroup cols={2}>
+  <Card title="Releases & Sentiment" icon="rocket">
+    Correlate a spike in negative sentiment with a specific product release date to understand which launches drove the most customer friction.
+  </Card>
+  <Card title="NPS by Segment" icon="chart-bar">
+    Compare NPS score trends across customer segments — enterprise vs. SMB, or US vs. EMEA — to identify where loyalty is diverging.
+  </Card>
+  <Card title="Support Volume & Feature Adoption" icon="headset">
+    See how support ticket volume tracks against feature adoption rates to pinpoint which new capabilities are creating confusion.
+  </Card>
+  <Card title="Feedback Topics & Churn Risk" icon="triangle-exclamation">
+    Identify which feedback themes — such as "slow performance" or "missing integrations" — correlate most strongly with churn risk signals in your CRM.
+  </Card>
+</CardGroup>
+
+## How to Create a Cross-Analysis
+
+<Steps>
+  <Step title="Open Cross-Analysis from the left nav">
+    In the Syncly left sidebar, click **Cross-Analysis** under the **Analyze** section. This opens the Cross-Analysis builder on a blank canvas.
+  </Step>
+  <Step title="Select your primary metric">
+    In the **Primary Metric** panel, choose the main signal you want to analyze — for example, **Sentiment Score**, **NPS**, or **Support Ticket Volume**. This becomes the baseline that Syncly plots on the primary axis.
+  </Step>
+  <Step title="Select a secondary metric or dimension">
+    In the **Secondary Metric** panel, choose the signal or dimension you want to compare against your primary metric — for example, **Product Area tag**, **Feature Adoption Rate**, or **Churn Risk Score**. You can add multiple secondary metrics to a single analysis.
+  </Step>
+  <Step title="Choose a time range and filters">
+    Use the **Time Range** picker to set the analysis window — for example, the last 90 days or a custom date range. Apply optional filters to narrow results by customer segment, feedback source, region, or any other available dimension. Consistent time ranges across both metrics produce the most reliable comparison.
+  </Step>
+  <Step title="Run the analysis and review the relationship chart">
+    Click **Run Analysis**. Syncly generates a relationship chart showing both metrics over your selected time range, along with a correlation score and a plain-language summary of the relationship strength and direction. Review the chart for overlapping peaks, divergences, and lag patterns.
+  </Step>
+  <Step title="Save or export the analysis">
+    Click **Save Analysis** to add this cross-analysis to your saved views for later reference. To share with others, click **Export** to download a PNG or PDF of the chart, or click **Share Link** to generate a shareable URL that opens directly in this cross-analysis view.
+  </Step>
+</Steps>
+
+## Reading the Cross-Analysis Chart
+
+The cross-analysis chart overlays your primary and secondary metrics on a shared time axis. Key elements to review:
+
+- **Correlation score** — displayed in the summary panel, this ranges from -1.0 (strong inverse relationship) to +1.0 (strong positive relationship). A score near 0 suggests little to no measurable relationship.
+- **Lag patterns** — look for cases where one metric shifts a few days or weeks before the other. This can indicate leading indicators — for example, a spike in a specific feedback topic that precedes a drop in NPS.
+- **Divergence points** — moments where two metrics move in opposite directions can be as informative as moments where they move together.
+
+<Warning>
+Correlation is not causation. A strong correlation between two metrics means they tend to move together — it does not confirm that one causes the other. Always validate cross-analysis findings by reviewing the underlying qualitative feedback. Dig into individual responses and themes before drawing conclusions or taking action based on correlation alone.
+</Warning>
+
+<Tip>
+Cross-analysis insights are highly actionable for product and engineering teams, but the chart alone can be hard to interpret without context. When sharing a cross-analysis, use the **Export** feature to include the correlation summary alongside the chart, and add a short note explaining your hypothesis and what you found. This gives your teammates the context they need to act on the data without retracing your analysis steps.
+</Tip>

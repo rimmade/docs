@@ -1,0 +1,97 @@
+---
+title: "Export Your Syncly Data and Reports"
+sidebarTitle: "Export Data"
+description: "Learn how to export feedback data, dashboard snapshots, and reports from Syncly as CSV or PDF — and how to automate exports using Workflows and Zapier."
+---
+
+Syncly makes it easy to take your insights beyond the platform. Whether you need a raw CSV of customer feedback for a data team, a PDF report for a stakeholder presentation, or an automated weekly export to a spreadsheet, you have multiple ways to get your data out. This page walks you through every export option available.
+
+## What You Can Export
+
+| Data Type | Format | Where to Start |
+|---|---|---|
+| Feedback items | CSV | Feedback Hub → Export |
+| Dashboard snapshot | PDF | Dashboard → Export |
+| Reports | PDF | Reports → Export |
+| Analysis / tag breakdowns | CSV | Reports → Export |
+
+All export formats are immediately available to all plan types. File size limits and export scheduling options are described in the sections below.
+
+## How to Export Feedback Data
+
+You can export any filtered view of your Feedback Hub as a CSV file. The exported file includes feedback text, source, date, tags, sentiment score, and any other metadata associated with each item.
+
+<Steps>
+  <Step title="Open the Feedback Hub">
+    Navigate to **Feedback Hub** in the left sidebar. By default, you'll see all feedback across all sources and date ranges.
+  </Step>
+  <Step title="Apply your filters">
+    Use the filter bar at the top of the Feedback Hub to narrow your export. You can filter by:
+    - **Date range** — choose a preset (Last 7 days, Last 30 days, etc.) or set a custom range.
+    - **Source** — limit the export to one or more integrations (e.g., Zendesk only).
+    - **Tag** — include only feedback tagged with specific categories.
+    - **Sentiment** — filter by Positive, Neutral, or Negative sentiment.
+
+    The item count shown in the Feedback Hub reflects exactly what will be included in your export.
+  </Step>
+  <Step title="Click Export → CSV">
+    Click the **Export** button in the top-right corner of the Feedback Hub, then select **CSV** from the dropdown menu.
+  </Step>
+  <Step title="Download the file">
+    Your browser will automatically download the CSV file to your default downloads folder. The file is named with the current date and your applied filters for easy reference. Open it in Excel, Google Sheets, or any data tool of your choice.
+  </Step>
+</Steps>
+
+<Tip>
+  If you need to export a very large dataset (tens of thousands of rows), apply a date range filter to break the export into smaller batches. This keeps file sizes manageable and reduces download time.
+</Tip>
+
+## How to Export a Dashboard as PDF
+
+You can export any dashboard as a PDF snapshot — useful for sharing visual summaries with stakeholders or archiving a point-in-time view of your metrics.
+
+1. Open the **Dashboard** you want to export from the left sidebar.
+2. Set the date range and any filters you want reflected in the export.
+3. Click the **Export** button (or the **⋯** menu) in the top-right corner of the dashboard.
+4. Select **Export as PDF**.
+5. Syncly generates the PDF and downloads it to your browser. The PDF includes all visible widgets with their current data and the selected date range displayed in the header.
+
+<Note>
+  Dashboard PDFs are a visual snapshot only — they do not include raw data rows. For underlying data, use the CSV export from the Feedback Hub or Reports section instead.
+</Note>
+
+## How to Export Reports
+
+Reports in Syncly combine AI-generated analysis, sentiment breakdowns, and tag summaries into a structured document.
+
+1. Navigate to **Reports** in the left sidebar.
+2. Open the report you want to export, or generate a new one by selecting a template and date range.
+3. Click **Export** in the top-right corner of the report page.
+4. Choose **PDF** for a formatted document or **CSV** to export the underlying data table.
+5. The file downloads to your browser immediately.
+
+## Export Limits and File Size Considerations
+
+- **CSV exports** support up to 100,000 feedback rows per export. For larger datasets, apply date range filters to split the export into multiple files.
+- **PDF exports** are generated from your current screen view. Very wide dashboards with many widgets may paginate across multiple PDF pages automatically.
+- There is no limit on how many times you can export data — exports do not count against any quota.
+
+<Warning>
+  CSV files containing large volumes of feedback with rich metadata can be several megabytes in size. If you plan to import the file into another tool, confirm that tool's file size and row limits before exporting.
+</Warning>
+
+## Scheduled Exports Using Workflows
+
+If you need feedback data delivered to your team on a regular schedule — for example, every Monday morning to a Google Sheet — you can automate this using Syncly's Zapier integration.
+
+To set up a scheduled export workflow:
+
+1. Connect Syncly to Zapier via **Settings → Integrations → Zapier**.
+2. In Zapier, create a new Zap with a **Schedule** trigger (e.g., every week on Monday at 9 AM).
+3. Add a Syncly action step to retrieve the latest feedback data.
+4. Add a destination step — such as **Google Sheets** (append rows) or **Slack** (send a message with a summary).
+5. Turn on the Zap. Syncly will automatically push data to your chosen destination on your chosen schedule.
+
+<Tip>
+  Use Zapier's **Filter** step between the Syncly and destination steps to include only feedback that matches specific tags or sentiment — so your team only sees the data most relevant to them.
+</Tip>

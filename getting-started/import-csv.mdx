@@ -1,0 +1,80 @@
+---
+title: "Import Feedback Data via CSV or Excel File"
+sidebarTitle: "CSV Import"
+description: "Upload historical feedback, one-time data exports, or data from tools without native Syncly integrations using a CSV or Excel file."
+---
+
+Not every data source has a native Syncly integration, and sometimes you need to bring in years of historical feedback all at once. CSV and Excel imports let you load any structured feedback data into Syncly's Feedback Hub — whether it's a dump from a legacy tool, a curated research dataset, or exported records from an internal system. Once your file is uploaded and your columns are mapped, Syncly's AI immediately starts tagging, scoring, and analyzing the imported data alongside your connected integrations.
+
+## When to Use CSV Import
+
+CSV import is the right choice when you need to:
+
+- **Migrate historical data** from a tool you're replacing or deprecating, where going back further than a native integration's start date isn't possible.
+- **Do a one-time data load** from a research project, user interview session, or external survey tool not yet supported by Syncly.
+- **Bring in feedback from internal systems** such as a homegrown CRM, a database export, or a manually maintained feedback spreadsheet.
+- **Test Syncly with your own data** before committing to live integrations.
+
+<Tip>
+**Avoid repeated CSV uploads for ongoing data.** If you're exporting from the same tool every week and re-uploading to Syncly, set up a [Zapier automation](/getting-started/integrations-overview) instead. Zapier can route new records to Syncly automatically, so your Feedback Hub stays current without any manual file management.
+</Tip>
+
+## Import Steps
+
+<Steps>
+  <Step title="Open the Import settings">
+    In Syncly, go to **Settings → Integrations → Import**. Click **New Import** to start a fresh import session.
+  </Step>
+  <Step title="Download the CSV template">
+    Click **Download Template** to get Syncly's pre-formatted CSV template. The template includes all required and optional column headers with example values in the first row so you know exactly what format each field expects. Using the template is strongly recommended — it eliminates the most common mapping errors.
+  </Step>
+  <Step title="Fill in your data">
+    Open the template in Excel, Google Sheets, or any spreadsheet tool and populate it with your feedback records. Required columns are `date` and `feedback_text`. All other columns are optional but add analytical value when included.
+
+    See the [Column Reference](#column-reference) table below for a full description of every available column.
+  </Step>
+  <Step title="Upload your file">
+    Back in Syncly, click **Upload File** and select your completed CSV or Excel file (`.csv`, `.xlsx`, or `.xls` formats are all accepted). Syncly validates the file format before proceeding.
+  </Step>
+  <Step title="Map columns to Syncly fields">
+    Syncly displays a column mapping screen. If you used the official template, fields are mapped automatically. If you're using a custom file, drag each source column to the corresponding Syncly field. Required fields must be mapped before you can proceed; optional fields can be left unmapped if the data isn't available.
+  </Step>
+  <Step title="Confirm and import">
+    Review the import summary — it shows the number of rows detected, any rows with validation errors, and a preview of the first five records. Click **Confirm Import** to begin. Large files are processed in the background; you'll receive an in-app notification and email when the import is complete.
+  </Step>
+</Steps>
+
+## Column Reference
+
+<Warning>
+**File encoding and date format matter.** Save your CSV file in **UTF-8 encoding** — other encodings (such as Windows-1252 or Latin-1) can cause character errors for non-ASCII content like accented characters or emoji. All dates must follow **ISO 8601 format: `YYYY-MM-DD`** (e.g., `2024-03-15`). Dates in other formats (e.g., `03/15/2024` or `15-Mar-24`) will fail validation and the affected rows will be skipped.
+</Warning>
+
+| Column Name | Type | Required | Description |
+|---|---|---|---|
+| `date` | Date (YYYY-MM-DD) | **Required** | The date the feedback was submitted or recorded |
+| `feedback_text` | String | **Required** | The full text of the customer feedback or response |
+| `source` | String | Optional | The channel or tool the feedback came from (e.g., "Intercom", "NPS Survey", "App Store") |
+| `customer_id` | String | Optional | Your internal customer or user ID; used to match feedback to CRM profiles |
+| `customer_email` | String | Optional | Customer email address; used for CRM matching if `customer_id` is unavailable |
+| `customer_name` | String | Optional | Customer's full name or company name |
+| `tags` | String | Optional | Comma-separated list of tags to pre-apply (e.g., `"billing,urgent,enterprise"`) |
+| `sentiment` | String | Optional | Pre-assigned sentiment label: `positive`, `neutral`, or `negative`. Leave blank to let Syncly AI assign it. |
+| `rating` | Number | Optional | Numeric rating associated with the feedback (e.g., NPS score 0–10, CSAT 1–5) |
+| `language` | String | Optional | ISO 639-1 language code (e.g., `en`, `fr`, `de`). If omitted, Syncly auto-detects the language. |
+| `external_id` | String | Optional | The feedback record's ID in the source system; useful for preventing duplicate imports |
+
+## File Size and Row Limits
+
+| Limit | Value |
+|---|---|
+| Maximum file size | 50 MB |
+| Maximum rows per import | 500,000 rows |
+| Supported file formats | `.csv`, `.xlsx`, `.xls` |
+| Maximum column width (text fields) | 50,000 characters per cell |
+
+If your dataset exceeds 500,000 rows, split it into multiple files and import them sequentially. Each import is processed independently and all records end up in the same Feedback Hub.
+
+<Info>
+Syncly automatically deduplicates records during import using the `external_id` column (if provided). If you re-upload a file that overlaps with a previous import, any row with a matching `external_id` is skipped rather than duplicated. If you don't populate `external_id`, Syncly uses a combination of `date`, `feedback_text`, and `customer_id` to detect likely duplicates.
+</Info>

@@ -1,0 +1,118 @@
+---
+title: "Connect Salesforce and HubSpot to Syncly"
+sidebarTitle: "CRM"
+description: "Enrich your Syncly feedback with CRM data from Salesforce or HubSpot to segment insights by customer tier, deal size, and lifecycle stage."
+---
+
+Raw feedback tells you *what* customers are saying. CRM data tells you *who's* saying it. When you connect Salesforce or HubSpot, Syncly automatically enriches every piece of feedback with the customer's account tier, contract value, and lifecycle stage — so you can instantly answer questions like "Are enterprise customers hitting this pain point more than SMBs?" or "How does NPS trend across customers in their first 90 days?" That kind of segmentation turns qualitative feedback into a strategic signal.
+
+## Why Connect Your CRM
+
+Linking your CRM unlocks three key capabilities in Syncly:
+
+- **Segment-level analysis** — Filter feedback in the Feedback Hub and on dashboards by any CRM attribute: industry, plan tier, ARR, region, or custom fields.
+- **Customer profile enrichment** — Syncly automatically matches inbound feedback to existing contact or account records, so every conversation carries full customer context.
+- **Churn and expansion signals** — Surface feedback patterns among customers approaching renewal, in active expansion conversations, or recently churned, so your team can act before it's too late.
+
+## Connect Your CRM
+
+<Tabs>
+  <Tab title="Salesforce">
+    ### Connecting Salesforce
+
+    Syncly connects to Salesforce via OAuth 2.0 — no manual API keys or custom code required.
+
+    <Steps>
+      <Step title="Open the Integrations settings">
+        Go to **Settings → Integrations** and find the Salesforce card under the **CRM** category.
+      </Step>
+      <Step title="Click Connect and authorize">
+        Click **Connect**. Syncly opens a Salesforce OAuth window. Log in with a Salesforce account that has at minimum **Read** access to the objects you want to sync (Contacts, Accounts, Opportunities). Click **Allow** to grant Syncly access.
+      </Step>
+      <Step title="Select the Salesforce objects to sync">
+        Choose which objects Syncly should import:
+        - **Contacts** — name, email, title, account association
+        - **Accounts** — company name, industry, ARR/ACV, tier, region
+        - **Opportunities** — stage, amount, close date, owner
+        - **Custom fields** — any custom Salesforce fields you've added to Contacts or Accounts
+
+        Toggle off any objects you don't need to keep your Feedback Hub clean.
+      </Step>
+      <Step title="Map Salesforce fields to Syncly customer profiles">
+        Syncly will suggest automatic field mappings based on standard Salesforce field names. Review the mappings and adjust any that don't match your Salesforce schema. See [Field Mapping](#field-mapping) below for details.
+      </Step>
+      <Step title="Save and sync">
+        Click **Save & Connect**. Syncly imports your Salesforce records and begins matching them to existing feedback in the Feedback Hub. New Salesforce updates sync every 24 hours.
+      </Step>
+    </Steps>
+
+    ### What Syncs from Salesforce
+
+    | Salesforce Object | Fields Imported |
+    |---|---|
+    | Contact | Name, email, title, account ID, created date |
+    | Account | Name, industry, type, ARR, tier, region, owner |
+    | Opportunity | Name, stage, amount, close date, account ID |
+    | Custom fields | Any custom Contact or Account fields you select |
+  </Tab>
+  <Tab title="HubSpot">
+    ### Connecting HubSpot
+
+    Syncly connects to HubSpot via the HubSpot OAuth app, using your HubSpot account's standard permissions.
+
+    <Steps>
+      <Step title="Open the Integrations settings">
+        Go to **Settings → Integrations** and find the HubSpot card under the **CRM** category.
+      </Step>
+      <Step title="Click Connect and authorize">
+        Click **Connect**. HubSpot's OAuth consent screen opens. Select the HubSpot account you want to connect (if you manage multiple portals) and click **Connect app** to grant Syncly read access.
+      </Step>
+      <Step title="Select the HubSpot objects to sync">
+        Choose which HubSpot objects to import:
+        - **Contacts** — name, email, lifecycle stage, owner
+        - **Deals** — name, stage, amount, close date, associated contacts
+        - **Notes** — notes logged against contacts and deals
+        - **Custom properties** — any custom contact or company properties
+
+        Toggle off any objects you don't need.
+      </Step>
+      <Step title="Map HubSpot properties to Syncly customer profiles">
+        Review the auto-suggested field mappings and adjust them to match your HubSpot property names. See [Field Mapping](#field-mapping) below.
+      </Step>
+      <Step title="Save and sync">
+        Click **Save & Connect**. Syncly imports your HubSpot records immediately and matches them to feedback in the Feedback Hub. Updates from HubSpot sync every 24 hours.
+      </Step>
+    </Steps>
+
+    ### What Syncs from HubSpot
+
+    | HubSpot Object | Fields Imported |
+    |---|---|
+    | Contact | Name, email, lifecycle stage, owner, created date |
+    | Company | Name, industry, annual revenue, number of employees |
+    | Deal | Name, stage, amount, close date, associated contact |
+    | Note | Note body, associated contact/deal, created date |
+    | Custom properties | Any custom contact or company properties you select |
+  </Tab>
+</Tabs>
+
+## Field Mapping
+
+Syncly uses a standard customer profile schema that your CRM fields map into. The table below shows how common CRM fields align with Syncly profile attributes.
+
+| Syncly Profile Field | Salesforce Field | HubSpot Property |
+|---|---|---|
+| Customer name | Account: Name | Company: Name |
+| Contact email | Contact: Email | Contact: Email |
+| Plan / tier | Account: Type or custom field | Contact: Lifecycle Stage or custom property |
+| Annual revenue | Account: AnnualRevenue | Company: Annual Revenue |
+| Industry | Account: Industry | Company: Industry |
+| Region | Account: BillingCountry | Company: Country |
+| Opportunity stage | Opportunity: StageName | Deal: Deal Stage |
+| Contract value | Opportunity: Amount | Deal: Amount |
+
+If your CRM uses custom field names for any of these attributes, you can update the mapping at any time by going to **Settings → Integrations → [Salesforce or HubSpot] → Field Mapping**.
+
+<Tip>
+**Segment feedback by customer tier for faster prioritization.** Once your CRM is connected, open the Feedback Hub and use the **Segment** filter to isolate feedback from enterprise accounts, high-ARR customers, or customers in a specific lifecycle stage. This makes it easy to separate "noisy" feedback from lower-tier users from the high-impact signals that should drive your roadmap.
+</Tip>

@@ -1,0 +1,119 @@
+---
+title: "Sentiment Analysis: Understand Customer Emotions at Scale"
+sidebarTitle: "Sentiment Analysis"
+description: "Syncly automatically detects the emotional tone of every feedback item. Track customer sentiment in real time, over time, and across every segment you care about."
+---
+
+Knowing what customers are talking about is only half the picture — knowing how they feel about it is what drives action. Syncly's Sentiment Analysis engine reads every feedback item the moment it arrives and classifies its emotional tone, so you always have a live read on customer satisfaction without manually reviewing thousands of messages. Whether you're monitoring the mood of your entire user base or tracking sentiment around a specific feature launch, Syncly surfaces the signal you need in seconds.
+
+## The Three Sentiment Levels
+
+Syncly classifies every feedback item into one of three sentiment categories.
+
+<CardGroup cols={3}>
+  <Card title="Positive" icon="face-smile" color="#22c55e">
+    The customer expresses satisfaction, enthusiasm, appreciation, or praise. Examples include compliments on ease of use, delight about a new feature, or gratitude for support received.
+  </Card>
+  <Card title="Neutral" icon="face-meh" color="#94a3b8">
+    The feedback is informational, ambiguous, or balanced — neither clearly positive nor clearly negative. Feature requests, factual bug reports, and questions often fall into this category.
+  </Card>
+  <Card title="Negative" icon="face-frown" color="#ef4444">
+    The customer expresses frustration, dissatisfaction, disappointment, or anger. Examples include complaints about missing functionality, expressions of intent to cancel, or descriptions of a painful workflow.
+  </Card>
+</CardGroup>
+
+## How Sentiment Is Calculated
+
+Syncly calculates sentiment at two levels: per individual feedback item, and in aggregate across groups of items.
+
+<Tabs>
+  <Tab title="Per Feedback Item">
+    When a feedback item arrives, Syncly's language model reads the full text and assigns a **sentiment score** on a continuous scale from –1.0 (maximally negative) to +1.0 (maximally positive). This score is then mapped to a label:
+
+    - **Positive**: score above +0.2
+    - **Neutral**: score between –0.2 and +0.2
+    - **Negative**: score below –0.2
+
+    You can see the exact score by hovering over the sentiment badge on any feedback item in the detail panel. For longer feedback items — such as a detailed support conversation or a lengthy survey response — Syncly scores each logical section independently and derives an overall score from the combination, so a single long message with mixed sentiment is handled accurately.
+  </Tab>
+  <Tab title="Aggregate Sentiment">
+    Aggregate sentiment is calculated across any group of feedback items you define — all feedback for a given time period, feedback from a specific source, feedback tagged with a particular topic, or feedback from a customer segment.
+
+    The aggregate score is a weighted average of individual item scores, giving more weight to items with higher text confidence. This score appears as:
+
+    - A percentage breakdown (e.g., 62% Positive / 24% Neutral / 14% Negative)
+    - A single **Net Sentiment Score** (NSS), calculated as % Positive minus % Negative (range: –100 to +100)
+
+    The NSS is shown prominently in your dashboards and at the top of every Insight Explorer analysis.
+  </Tab>
+</Tabs>
+
+## Viewing Sentiment in the Feedback Hub
+
+Sentiment is visible throughout the Feedback Hub without any extra steps.
+
+- **Sentiment badge** — Every feedback item in the feed displays a color-coded badge (green, gray, or red) so you can scan emotional tone at a glance.
+- **By Sentiment view** — Switch to the **By Sentiment** view in the Hub header to see your feed segmented into three columns: Positive, Neutral, and Negative. This view is especially useful during incident response, when you want to isolate and prioritize frustrated customers quickly.
+- **Sentiment filter** — Use the filter panel to restrict the feed to one or more sentiment levels, and combine it with source, tag, or date filters for precise targeting.
+
+## Sentiment Trends Over Time
+
+A snapshot of today's sentiment is useful. A trend line showing how sentiment has shifted over weeks or months is transformative.
+
+<Steps>
+  <Step title="Open the Sentiment Trend chart">
+    Navigate to **Insights → Sentiment Trend** from the left sidebar. The chart defaults to the last 30 days and plots your Net Sentiment Score as a line over time, with volume bars in the background so you can correlate mood changes with feedback volume.
+  </Step>
+  <Step title="Adjust the time range">
+    Use the date picker in the top-right corner to change the range. You can select preset ranges (7 days, 30 days, 90 days, 12 months) or set a custom start and end date.
+  </Step>
+  <Step title="Apply filters to scope the trend">
+    Apply source, tag, or segment filters to scope the trend line to a specific slice of your feedback. For example, filter to the **Bug** tag to see whether customer frustration around bugs has increased or decreased over time.
+  </Step>
+  <Step title="Hover to inspect specific points">
+    Hover over any point on the trend line to see the exact NSS, the total feedback volume, and the sentiment breakdown (% Positive / Neutral / Negative) for that period.
+  </Step>
+  <Step title="Annotate key events">
+    Click **+ Add Annotation** to mark a date with an event label — a product release, a pricing change, a marketing campaign. Annotations appear as vertical markers on the chart, making it easy to see whether events caused sentiment shifts.
+  </Step>
+</Steps>
+
+## Filtering by Sentiment
+
+<Accordion title="In the Feedback Hub">
+  Open the filter panel and select one or more sentiment values under the **Sentiment** heading. The feed updates instantly. Combine sentiment filtering with a tag filter (e.g., Negative + "Onboarding") to find frustrated customers struggling with a specific part of your product.
+</Accordion>
+
+<Accordion title="In dashboards">
+  Every dashboard widget that displays feedback data can be filtered by sentiment. Open the widget's edit panel, click **Add Filter**, and choose a sentiment level. This lets you build a dashboard that shows, for example, only negative feedback broken down by source.
+</Accordion>
+
+<Accordion title="In Insight Explorer">
+  When running an Insight Explorer analysis, sentiment is available as both a filter and a display dimension. You can analyze the sentiment breakdown of any topic or keyword query, and plot sentiment over time directly within the analysis workspace.
+</Accordion>
+
+## Sentiment Breakdowns by Source, Tag, and Segment
+
+Understanding *where* sentiment problems live is as important as knowing they exist.
+
+<CardGroup cols={3}>
+  <Card title="By Source" icon="plug">
+    Compare sentiment across your connected channels. You might find that NPS survey respondents skew more positive than support ticket submitters — useful context when interpreting any single channel.
+  </Card>
+  <Card title="By Tag" icon="tag">
+    See the Net Sentiment Score for each tag in your taxonomy. This reveals which product areas carry the most emotional weight — both positively and negatively.
+  </Card>
+  <Card title="By Segment" icon="users">
+    Break sentiment down by the customer segments you define in Settings — plan tier, company size, region, or any other attribute. Segment-level sentiment differences often surface the most actionable insights.
+  </Card>
+</CardGroup>
+
+To access these breakdowns, navigate to **Insights → Sentiment Breakdown** and use the **Group By** selector to switch between Source, Tag, and Segment views.
+
+<Tip>
+  Track sentiment before, during, and after every product release or major campaign by adding date annotations to the Sentiment Trend chart and filtering to the relevant tag. This turns sentiment data into concrete release retrospective evidence — and over time, helps you predict how different types of changes affect customer emotion.
+</Tip>
+
+<Info>
+  Syncly handles multi-language feedback automatically. The sentiment model supports over 30 languages and detects the language of each feedback item before scoring it, so French, Spanish, Japanese, and German responses are analyzed with the same accuracy as English ones. The language detected for each item is shown in the feedback detail panel. If you need to filter the Feedback Hub to a specific language, use the **Language** filter in the filter panel.
+</Info>

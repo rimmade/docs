@@ -1,0 +1,82 @@
+---
+title: "Connect Survey Tools: SurveyMonkey and Typeform"
+sidebarTitle: "Surveys"
+description: "Automatically import SurveyMonkey and Typeform responses, NPS scores, and open-ended answers into Syncly for AI-powered analysis."
+---
+
+Surveys are one of the highest-value feedback sources you have — customers take the time to answer your questions deliberately, which means the signal is rich and intentional. Syncly connects directly to SurveyMonkey and Typeform so that every survey response, NPS score, and open-ended answer flows into your Feedback Hub automatically. From there, Syncly's AI analyzes responses alongside your support tickets, call transcripts, and community messages to give you a complete view of customer sentiment.
+
+## Supported Survey Platforms
+
+- **SurveyMonkey** — all question types: NPS, CSAT, multiple choice, rating scales, and open text
+- **Typeform** — all response types: short text, long text, opinion scales, NPS, and multiple choice
+
+## Connecting Your Survey Tool
+
+<Tabs>
+  <Tab title="SurveyMonkey">
+    <Steps>
+      <Step title="Open the Integrations settings">
+        In Syncly, go to **Settings → Integrations** and find the SurveyMonkey card under the **Survey** category.
+      </Step>
+      <Step title="Click Connect and authorize">
+        Click **Connect**. Syncly opens a SurveyMonkey OAuth window. Log in with the SurveyMonkey account that owns the surveys you want to import and click **Authorize** to grant Syncly read access to your survey data.
+      </Step>
+      <Step title="Select which surveys to sync">
+        Syncly lists all surveys available in your SurveyMonkey account. Toggle on the surveys you want to include. You can add or remove surveys at any time from **Settings → Integrations → SurveyMonkey → Configure**.
+      </Step>
+      <Step title="Set a historical start date">
+        Choose how far back Syncly should import responses. If you've been running NPS or CSAT surveys for months or years, importing historical responses gives the AI a richer baseline for trend analysis.
+      </Step>
+      <Step title="Click Connect">
+        Click **Connect** to complete the setup. Syncly begins importing your selected surveys and their responses. New responses will sync in real time as they come in.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Typeform">
+    <Steps>
+      <Step title="Open the Integrations settings">
+        In Syncly, go to **Settings → Integrations** and find the Typeform card under the **Survey** category.
+      </Step>
+      <Step title="Click Connect and authorize">
+        Click **Connect**. Typeform's OAuth screen opens. Log in with your Typeform workspace credentials and click **Allow** to grant Syncly read access to your forms and responses.
+      </Step>
+      <Step title="Select which forms to sync">
+        Syncly lists all forms in your Typeform workspace. Toggle on the ones you want to include in your Feedback Hub. You can update your selection later from **Settings → Integrations → Typeform → Configure**.
+      </Step>
+      <Step title="Set a historical start date">
+        Choose how far back to import existing responses. Typeform stores all historical responses in your account, so you can backfill as far as your plan allows.
+      </Step>
+      <Step title="Click Connect">
+        Click **Connect** to finish setup. Syncly immediately starts importing your Typeform responses and will continue syncing new ones as they arrive.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## What Survey Data Gets Imported
+
+Syncly imports the following from both SurveyMonkey and Typeform:
+
+| Data Type | Description |
+|---|---|
+| **Open-ended text responses** | Full text of any free-form answer fields |
+| **NPS scores** | Numeric 0–10 scores and any follow-up comment |
+| **CSAT / rating scores** | Numeric ratings from satisfaction or rating scale questions |
+| **Multiple choice selections** | The selected answer option(s) for each respondent |
+| **Respondent metadata** | Submission timestamp, respondent ID (if available), custom hidden fields |
+
+Questions that are purely administrative (e.g., contact info collection) can be excluded during setup to keep your Feedback Hub focused on actionable feedback.
+
+## How Syncly AI Analyzes Survey Responses
+
+Once your survey data is in the Feedback Hub, Syncly's AI processes it automatically — no manual configuration required:
+
+- **Auto-tagging** — Syncly reads each open-ended response and applies relevant topic tags (e.g., "pricing," "onboarding," "performance") so you can filter and group feedback without reading every response yourself.
+- **Sentiment scoring** — Every text response receives a sentiment score (positive, neutral, or negative) based on the language used, independent of the numeric rating given.
+- **NPS driver analysis** — For NPS surveys, Syncly cross-references the score with the open-ended "why" response to identify which themes drive promoter vs. detractor scores.
+- **Trend detection** — Syncly tracks how topics and sentiment shift over time across survey waves, so you can see whether a specific issue is getting better or worse after a product change.
+
+<Tip>
+**Get the most out of CSAT and NPS surveys by including an open-ended follow-up question.** A numeric score alone tells you how customers feel, but the open-ended response tells you *why*. Even a simple "What's the main reason for your score?" gives Syncly's AI enough text to tag themes, detect sentiment, and surface specific product or service issues — turning a score into an actionable insight.
+</Tip>

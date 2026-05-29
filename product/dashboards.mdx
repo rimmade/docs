@@ -1,0 +1,108 @@
+---
+title: "Build and Customize Syncly Dashboards"
+sidebarTitle: "Dashboards"
+description: "Build custom dashboards to monitor customer sentiment, tag volume, feedback trends, and more — all in one visual workspace tailored to your team."
+---
+
+Syncly dashboards give you a living, visual command center for your customer intelligence data. Instead of hunting through raw feedback or static spreadsheets, you get real-time charts, filters, and trend views that surface what's happening across your customer base — and let you act on it fast. Whether you're tracking a product launch, monitoring support sentiment, or keeping leadership informed, dashboards put the right signals in front of the right people.
+
+## What Are Syncly Dashboards?
+
+A dashboard in Syncly is a fully customizable collection of widgets — charts, trend lines, topic clouds, and score trackers — each pulling from your connected feedback sources. You arrange them however you like, apply filters to zero in on specific segments or time ranges, and share them with teammates so everyone works from the same picture of customer reality.
+
+Dashboards update continuously as new feedback flows in, so you're always looking at current data rather than a point-in-time snapshot.
+
+## Create a New Dashboard
+
+<Steps>
+  <Step title="Open the New Dashboard dialog">
+    Click **+ New Dashboard** in the left sidebar. The dashboard builder opens with a blank canvas ready for your first widget.
+  </Step>
+  <Step title="Name your dashboard">
+    Enter a descriptive name — for example, *CX Weekly Overview* or *Product Feedback: Q3* — so teammates can find and understand it at a glance.
+  </Step>
+  <Step title="Add widgets">
+    Click **Add Widget** and choose from the available widget types. Build out your dashboard with any combination of the following:
+
+    - **Sentiment Trend** — line chart of positive, neutral, and negative sentiment over time
+    - **Tag Volume** — bar or donut chart showing how often each tag appears in feedback
+    - **Feedback Volume by Source** — breakdown of incoming feedback counts per channel (e.g., Intercom, Zendesk, App Store)
+    - **Top Trending Topics** — dynamic list of topics gaining traction in recent feedback
+    - **NPS / CSAT Score** — current score with historical trend line
+  </Step>
+  <Step title="Configure each widget with filters">
+    After adding a widget, click its **Settings** icon to apply filters:
+
+    - **Time range** — last 7 days, 30 days, 90 days, or a custom date window
+    - **Feedback source** — limit the widget to one or more connected integrations
+    - **Tag** — focus on a specific topic or category label
+    - **Customer segment** — filter by plan tier, region, account size, or any custom segment you've defined
+  </Step>
+  <Step title="Arrange widgets by drag and drop">
+    Drag widgets to reorder and resize them across the canvas. Pin your most critical metrics to the top and group related widgets together for easier scanning.
+  </Step>
+  <Step title="Save and share">
+    Click **Save Dashboard**. Your dashboard is now visible to you in the sidebar. To share it with teammates, click **Share** in the top-right corner and invite specific users or share with your entire workspace.
+  </Step>
+</Steps>
+
+## Widget Types
+
+Each widget type is designed to answer a specific question about your customer data. Mix and match them to build the exact view your team needs.
+
+<CardGroup cols={2}>
+  <Card title="Sentiment Trend" icon="chart-line">
+    Plots the ratio of positive, neutral, and negative feedback over a selected time window. Use this to spot dips after a release or improvements following a support initiative.
+  </Card>
+  <Card title="Tag Volume" icon="tags">
+    Shows how many feedback items carry each tag. Identify which topics dominate the conversation and watch for tags that are growing quickly.
+  </Card>
+  <Card title="Feedback Volume" icon="messages">
+    Tracks the total number of feedback items received, broken down by source. Useful for understanding where your customers are most vocal.
+  </Card>
+  <Card title="Trending Topics" icon="arrow-trend-up">
+    Surfaces topics that have seen a notable uptick in mentions recently, ranked by velocity. Great for catching emerging issues before they escalate.
+  </Card>
+  <Card title="NPS / CSAT Score" icon="star">
+    Displays your current Net Promoter Score or Customer Satisfaction score alongside a trend line so you can see whether you're improving over time.
+  </Card>
+  <Card title="Custom Query" icon="sliders">
+    Write a natural language query — for example, *"feedback mentioning onboarding from enterprise customers in the last 30 days"* — and Syncly renders the results as a chart or list widget.
+  </Card>
+</CardGroup>
+
+## Dashboard Filters
+
+Global filters at the top of each dashboard let you slice all widgets simultaneously without editing them one by one.
+
+| Filter | Options |
+|---|---|
+| **Date Range** | Last 7 / 30 / 90 days, this quarter, this year, or a custom range |
+| **Feedback Source** | Any connected integration (Intercom, Zendesk, App Store, CSV, etc.) |
+| **Customer Segment** | Plan tier, region, account size, or any custom segment attribute |
+
+Applying a global filter overrides individual widget filters for that session. To make a filter permanent for a widget, set it inside the widget's settings.
+
+## Share Dashboards with Teammates
+
+Click **Share** in the top-right corner of any dashboard to open the sharing panel.
+
+- **Invite by email** — send an invitation to specific colleagues, even if they don't have a Syncly account yet (they'll be prompted to sign up).
+- **Share with workspace** — make the dashboard visible to everyone in your Syncly workspace.
+- **Copy link** — generate a direct URL you can paste into Slack, Notion, or any internal tool.
+
+Shared dashboards are view-only by default. To let a teammate edit, toggle their permission to **Editor** in the sharing panel.
+
+## Set a Dashboard as Your Home Screen
+
+If you have a dashboard you check every day, pin it as your home screen so it loads automatically when you open Syncly.
+
+1. Open the dashboard you want to pin.
+2. Click the **⋯** menu in the top-right corner.
+3. Select **Set as Home Screen**.
+
+Your home dashboard appears every time you log in, giving you an instant pulse check without any navigation.
+
+<Tip>
+  Create separate dashboards tailored to each team's priorities. For example, a **CX dashboard** focused on sentiment trends and support tag volume, a **Product dashboard** centered on trending feature requests and NPS scores, and a **Marketing dashboard** tracking feedback by acquisition channel. Each team gets a clean, relevant view without wading through metrics that don't apply to them.
+</Tip>

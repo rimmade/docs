@@ -1,0 +1,82 @@
+---
+title: "Security Practices and Data Protection at Syncly"
+sidebarTitle: "Security"
+description: "Understand how Syncly protects your data with encryption, access controls, SSO, and regular third-party audits — and how to reach the security team."
+---
+
+Security is foundational to how Syncly is built and operated. Because your customer feedback data is sensitive, Syncly applies enterprise-grade security controls at every layer of the platform — from how data travels over the network, to how credentials are stored, to how your team members are granted access. This page explains each of those controls in plain language.
+
+## Encryption
+
+Syncly encrypts all data in transit and at rest:
+
+- **In transit:** All communication between your browser (or a connected integration) and Syncly's servers uses **TLS 1.2 or higher**. This ensures that data cannot be intercepted or read as it moves across the network.
+- **At rest:** All data stored on Syncly's infrastructure — including your feedback content, metadata, and account information — is encrypted using **AES-256**, the same standard used by financial institutions and government systems.
+
+These controls apply to all customers on all plans. There is no unencrypted data path into or out of the Syncly platform.
+
+## Authentication
+
+Syncly supports multiple authentication methods to fit the needs of individual users and enterprise teams:
+
+- **Password-based login:** Syncly enforces strong password requirements (minimum length, complexity) and supports password reset via a verified email flow.
+- **SSO / SAML (Enterprise):** Enterprise workspaces can configure Single Sign-On using SAML 2.0, integrating Syncly with identity providers such as Okta, Azure AD, or Google Workspace. When SSO is enabled, all workspace members authenticate through your identity provider, and Syncly never holds user passwords.
+- **Session management:** Syncly issues short-lived session tokens and enforces automatic session expiry after periods of inactivity to reduce the risk of unauthorized access from unattended sessions.
+
+<Note>
+  If your organization requires SSO enforcement — meaning no one can log in with a password — contact the [Syncly Support team](/support/contact) or your account manager to enable mandatory SSO for your workspace.
+</Note>
+
+## Access Controls
+
+Syncly uses role-based access control (RBAC) to ensure team members only access what they need:
+
+| Role | Capabilities |
+|---|---|
+| **Admin** | Full access: manage integrations, users, billing, workspace settings, and all data. |
+| **Member** | Read and write access to Feedback Hub, Dashboards, and Reports. Cannot manage integrations or users. |
+| **Viewer** | Read-only access to Dashboards and Reports. Cannot view raw feedback or modify any settings. |
+
+You can assign and update roles for any workspace member under **Settings → Team**. Syncly recommends granting the minimum role necessary for each user's responsibilities — this limits the potential impact of a compromised account.
+
+## Integration Credential Security
+
+When you connect an integration to Syncly, the credentials used (API keys, OAuth tokens, or service account credentials) are handled as follows:
+
+- **Encrypted storage:** All credentials are encrypted using AES-256 before being written to Syncly's database. They are decrypted only when needed to make an authorized API call to the source integration.
+- **Never exposed:** Credentials are never displayed in the Syncly interface after initial setup, never included in logs, and never transmitted to any third party other than the integration endpoint they authenticate against.
+- **OAuth preferred:** Where possible, Syncly uses OAuth flows so that you authorize access through the source tool's own secure consent screen — Syncly never sees or stores your source account password.
+- **Revocable at any time:** You can disconnect any integration at any time from **Settings → Integrations**, immediately revoking Syncly's access to that source.
+
+## Incident Response
+
+Syncly maintains a documented incident response process to detect, contain, and communicate security events:
+
+- **Detection:** Syncly uses automated monitoring and alerting to detect anomalous access patterns, infrastructure errors, and potential security events in real time.
+- **Containment:** Upon detecting a confirmed security incident, Syncly's security team acts immediately to isolate affected systems and prevent further impact.
+- **Customer notification:** If a security incident affects your data, Syncly will notify affected customers promptly — within 72 hours of confirmation, in line with GDPR breach notification requirements — with a description of what occurred, what data was involved, and what steps Syncly has taken.
+- **Post-incident review:** After every significant incident, Syncly conducts a root cause analysis and implements measures to prevent recurrence.
+
+<Warning>
+  If you believe you have discovered a security vulnerability in Syncly, please report it responsibly by contacting the [Syncly Support team](/support/contact) directly. Do not share vulnerability details publicly before Syncly has had the opportunity to investigate and remediate.
+</Warning>
+
+## Penetration Testing and Security Audits
+
+Syncly engages independent third-party security firms to conduct penetration tests and security audits on a regular basis. These assessments cover:
+
+- Application security (web app, API endpoints)
+- Infrastructure and cloud configuration
+- Authentication and access control mechanisms
+- Data handling and encryption practices
+
+Findings from these audits are prioritized and remediated as part of Syncly's ongoing security program. Syncly maintains SOC 2 Type II compliance, which includes independent auditor verification of security, availability, and confidentiality controls.
+
+<Note>
+  Enterprise customers can request a security review, including access to Syncly's SOC 2 report and completion of a security questionnaire, as part of their procurement process. Contact the [Syncly Support team](/support/contact) or your account manager to initiate a security review.
+</Note>
+
+## Additional Resources
+
+- For information on how Syncly handles your data, what it collects, and your rights as a customer, see the [Data Privacy and Compliance](/support/data-privacy) page.
+- For questions about security practices, incident reporting, or enterprise security reviews, [contact the Syncly Support team](/support/contact).

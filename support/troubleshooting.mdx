@@ -1,0 +1,174 @@
+---
+title: "Troubleshooting Common Syncly Issues"
+sidebarTitle: "Troubleshooting"
+description: "Diagnose and fix the most common issues in Syncly — from integration errors and missing feedback to login problems and CSV import failures."
+---
+
+Most issues in Syncly have a straightforward fix. Work through the relevant section below to resolve the problem quickly. If a step doesn't apply to your setup, skip it and continue to the next. For issues not covered here, the [Syncly Support team](/support/contact) is ready to help.
+
+<AccordionGroup>
+
+<Accordion title="Integration not connecting">
+  If an integration fails to connect or shows an error during setup, work through the following steps:
+
+  **1. Verify your credentials**
+  Double-check that the API key, OAuth account, or login credentials you're using belong to an account with sufficient permissions in the source tool. For example, Zendesk integrations require Admin-level access to read ticket data.
+
+  **2. Re-authenticate the connection**
+  Go to **Settings → Integrations**, find the affected integration, and click **Reconnect** or **Re-authenticate**. This refreshes the authorization token and resolves most OAuth-related failures.
+
+  **3. Check API rate limits**
+  Some platforms (such as Intercom and Salesforce) enforce API rate limits. If you've recently connected multiple tools or run a large historical sync, your source tool may be throttling requests. Wait 15–30 minutes and try again. Syncly automatically retries failed syncs with backoff, so in most cases the integration will recover on its own.
+
+  **4. Check for service outages**
+  If the source tool (e.g., Zendesk, HubSpot) is experiencing an outage, Syncly will not be able to retrieve data. Check the status page of the relevant tool and try reconnecting once it's resolved.
+
+  <Warning>
+    Avoid saving credentials in Syncly for accounts that have two-factor authentication enforced without app-level API key support — use dedicated service accounts or API keys where possible.
+  </Warning>
+</Accordion>
+
+<Accordion title="Feedback not appearing in the Feedback Hub">
+  If feedback you expect to see isn't showing up, check the following:
+
+  **1. Confirm the integration is actively syncing**
+  Go to **Settings → Integrations** and look at the sync status for the relevant source. A green indicator means the integration is live. If it shows a warning or error, follow the steps in the [Integration not connecting](#integration-not-connecting) section above.
+
+  **2. Check your date range settings**
+  The Feedback Hub defaults to a specific date range. Make sure the date filter at the top of the page includes the time period when the feedback was created. Expand the range to **All Time** to rule out a date filter issue.
+
+  **3. Allow time for the initial sync to complete**
+  After connecting a new integration, Syncly needs time to ingest historical data, especially for large volumes. Check the **Last synced** timestamp on your integration. If it shows a recent time and feedback is still missing, proceed to the next step.
+
+  **4. Check source-side filters**
+  Some integrations let you configure which data to pull (e.g., specific Zendesk ticket views or Typeform form IDs). Verify that the feedback you're expecting falls within the scope of your integration configuration.
+
+  <Info>
+    If feedback from a specific date range is still missing after confirming the above, contact [Syncly Support](/support/contact) with your workspace name and the integration name so the team can investigate the sync logs.
+  </Info>
+</Accordion>
+
+<Accordion title="Auto-tags look wrong or missing">
+  Syncly's AI auto-tagging is highly accurate, but there are a few situations where tags may appear incorrect or absent.
+
+  **Tags are missing on recent feedback**
+  The AI needs a moment to process newly ingested feedback. If feedback arrived in the last few minutes, wait a short time and refresh the Feedback Hub. Tagging typically completes within minutes of ingestion.
+
+  **Tags don't reflect your taxonomy**
+  If you've recently added or changed custom tags, the AI may need a calibration period to apply them consistently to new feedback. Make sure your tags are saved under **Settings → Tags** and are marked as active.
+
+  **How to correct tags manually**
+  Open any feedback item in the Feedback Hub and click the tag field to add, remove, or change tags. Every manual correction you make is a signal that helps improve AI accuracy for similar feedback in your workspace going forward.
+
+  **Tags seem too broad or too narrow**
+  Review your tag definitions under **Settings → Tags**. Adding clearer descriptions or example phrases to each tag helps the AI understand the intended scope and apply tags more precisely.
+
+  <Tip>
+    If you notice a pattern of consistently wrong tags for a specific type of feedback, contact [Syncly Support](/support/contact) — the team can help review your taxonomy and tune AI behavior for your workspace.
+  </Tip>
+</Accordion>
+
+<Accordion title="Hey Syncly giving inaccurate answers">
+  Hey Syncly AI Chat answers questions based on your connected feedback data. If answers seem off, consider the following:
+
+  **Check data recency**
+  Hey Syncly can only answer based on the data that has been synced into your workspace. If your integrations haven't synced recently, ask about sync status first or check **Settings → Integrations**. Fresh data leads to more accurate answers.
+
+  **Rephrase your question**
+  Hey Syncly works best with specific, natural-language questions. Instead of asking "What's wrong?", try "What are the top complaints from Zendesk tickets in the last 30 days?" Specific time ranges, sources, and topics produce sharper results.
+
+  **Check which sources are connected**
+  Hey Syncly draws from all data in your Feedback Hub. If a key data source (e.g., your NPS survey tool) isn't connected, its feedback won't be reflected in the AI's answers. Verify your integrations under **Settings → Integrations**.
+
+  **Understand confidence and caveats**
+  Hey Syncly will note when it's uncertain or when data is limited. If it says "based on limited data," that's a sign to bring in more feedback sources or expand your date range before drawing conclusions.
+
+  <Note>
+    Hey Syncly does not browse the internet or access data outside your Syncly workspace. All answers are grounded in your ingested feedback.
+  </Note>
+</Accordion>
+
+<Accordion title="Dashboard widgets showing no data">
+  If a dashboard widget displays "No data" or appears blank, work through these checks:
+
+  **1. Check the date range filter**
+  Each dashboard has a global date range selector. Make sure the selected range overlaps with the period when your feedback was ingested. Try setting it to **Last 90 days** or **All Time** to test.
+
+  **2. Check source filters**
+  Some widgets are scoped to specific integrations or tags. Open the widget settings (click the **⋯** menu on the widget) and confirm the source, tag, and sentiment filters include your expected data.
+
+  **3. Confirm your connected sources have data**
+  Navigate to the Feedback Hub and check whether feedback exists for the filters you've applied. If the Feedback Hub also shows no results, the issue is with data ingestion rather than the dashboard widget itself.
+
+  **4. Refresh or rebuild the widget**
+  Occasionally a widget needs a manual refresh. Use the refresh icon on the widget or try removing and re-adding it to your dashboard.
+
+  <Warning>
+    If your workspace was just set up, widgets may show no data until the first integration sync completes. Give Syncly 10–20 minutes after your first connection before checking the dashboard.
+  </Warning>
+</Accordion>
+
+<Accordion title="Can't log in">
+  If you're unable to access your Syncly account, try the following steps in order:
+
+  **Reset your password**
+  On the login page, click **Forgot password** and follow the instructions sent to your email. Check your spam folder if the email doesn't arrive within a few minutes.
+
+  **SSO / SAML issues**
+  If your workspace uses Single Sign-On, make sure you're logging in through the SSO flow (usually a company-specific login URL or the **Log in with SSO** button). Contact your IT administrator if your SSO credentials are not working — the issue may be on the identity provider side.
+
+  **Clear your browser cache and cookies**
+  Stale session data can prevent login from completing. Clear your browser cache and cookies, then try logging in again in a private/incognito window to rule out browser-specific issues.
+
+  **Try a different browser**
+  If the issue persists, try logging in with a different browser or device to determine whether it's browser-specific.
+
+  <Info>
+    If none of the above steps work, contact [Syncly Support](/support/contact) with your email address and a description of any error message you see. Include whether your workspace uses SSO.
+  </Info>
+</Accordion>
+
+<Accordion title="CSV import failing">
+  CSV imports have a few requirements that, when not met, can cause the import to fail or produce incorrect results.
+
+  **File format requirements**
+  - The file must be saved as UTF-8 encoded CSV (not Excel `.xlsx` format).
+  - The first row must be a header row with column names.
+  - Required columns typically include a feedback text field and a date field. Download the Syncly CSV template from the import dialog to ensure your file matches the expected structure.
+
+  **Encoding issues**
+  If your CSV was exported from Excel, it may use Windows-1252 encoding instead of UTF-8. Open the file in a text editor and re-save it as UTF-8, or use Google Sheets to download a properly encoded CSV.
+
+  **Column mapping**
+  During import, Syncly asks you to map your CSV columns to Syncly fields (e.g., mapping "Customer Comment" to "Feedback Text"). Ensure every required field has a match. Unmapped required fields will cause the import to fail.
+
+  **File size**
+  Very large CSV files (over 50 MB) may time out. Split the file into smaller batches and import them sequentially.
+
+  <Tip>
+    Use the downloadable CSV template in the Import dialog as a starting point — it includes all required columns with the correct headers and sample data.
+  </Tip>
+</Accordion>
+
+<Accordion title="Trending topics not updating">
+  If the trending topics section of your Dashboard seems stale or unchanged, consider these factors:
+
+  **Sync frequency**
+  Trending topics are recalculated each time new feedback is synced. If your integrations sync on a scheduled interval (e.g., every few hours), trending topics will update at that same cadence. Check your integration sync settings under **Settings → Integrations** if you need more frequent updates.
+
+  **Minimum data volume**
+  Syncly's trend detection requires a statistically meaningful volume of feedback to identify genuine trends. If your workspace has fewer than a few hundred feedback items in the selected date range, the trending topics model may not have enough signal to surface changes. Connect additional data sources or expand your date range to increase the volume.
+
+  **Date range scope**
+  Make sure your dashboard date range is set to a window that includes recent feedback. If the range ends in the past, no new trends will appear even if data is being synced.
+
+  <Note>
+    Trending topics reflect patterns in your actual feedback data — if customer behavior hasn't shifted recently, it's expected for the top topics to remain consistent from week to week.
+  </Note>
+</Accordion>
+
+</AccordionGroup>
+
+---
+
+Still stuck? The [Syncly Support team](/support/contact) is here to help. Reach out via in-app chat or email with your workspace name, a description of the issue, and any relevant screenshots.

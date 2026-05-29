@@ -1,0 +1,141 @@
+---
+title: "Connect Social Channels and Community Platforms"
+sidebarTitle: "Social & Community"
+description: "Bring Slack, Discord, Gmail, Grain, Gong, and Google Play reviews into Syncly for a complete view of what customers say beyond your support inbox."
+---
+
+Customers don't only talk to you through support tickets and surveys — they discuss your product in Slack communities, leave reviews on the app store, share feedback in Discord servers, and tell your sales team exactly what they think on recorded calls. Connecting these channels to Syncly means you capture the full spectrum of customer voice, not just the feedback customers choose to submit through official channels. Everything lands in the Feedback Hub for unified AI analysis.
+
+## Supported Platforms
+
+| Platform | Category | What Syncly Captures |
+|---|---|---|
+| Slack | Community | Messages from customer-facing channels and workspaces |
+| Discord | Community | Messages from customer community servers |
+| Gmail | Email | Customer-facing email threads and feedback messages |
+| Grain | Call Recording | Call transcripts, highlights, and speaker notes |
+| Gong | Call Recording | Call recordings, full transcripts, and Gong AI insights |
+| Google Play | Online Store | App reviews, star ratings, and developer reply threads |
+
+<Note>
+**Looking for Twitter/X, LinkedIn, TikTok, or YouTube listening?** Syncly's integrations cover synchronous and asynchronous text channels. For social video listening, influencer discovery, and competitive social analysis, see [Syncly Social](/product/social/overview) — a dedicated module built for monitoring public social platforms at scale.
+</Note>
+
+## Connecting Each Platform
+
+### Slack
+
+<Steps>
+  <Step title="Go to Settings → Integrations">
+    Open **Settings → Integrations** and click **Connect** on the Slack card.
+  </Step>
+  <Step title="Authorize Syncly in Slack">
+    Syncly opens a Slack OAuth screen. Select the Slack workspace that contains your customer community channels and click **Allow**. Syncly requests read-only access to the channels you select — it cannot post messages on your behalf.
+  </Step>
+  <Step title="Choose which channels to monitor">
+    From the channel picker, select the customer-facing channels you want Syncly to monitor (e.g., `#general`, `#feedback`, `#feature-requests`). Leave internal team channels unchecked to keep your Feedback Hub focused on customer signal.
+  </Step>
+  <Step title="Set a start date and click Connect">
+    Choose how far back to import messages, then click **Connect**. New messages in the selected channels will sync in real time going forward.
+  </Step>
+</Steps>
+
+### Discord
+
+<Steps>
+  <Step title="Go to Settings → Integrations">
+    Open **Settings → Integrations** and click **Connect** on the Discord card.
+  </Step>
+  <Step title="Add the Syncly bot to your server">
+    Syncly provides a Discord bot link. Click **Add to Server**, select the Discord server that hosts your customer community, and grant the bot **Read Messages** permission for the channels you want to monitor.
+  </Step>
+  <Step title="Select channels to monitor">
+    Back in Syncly, choose which Discord channels to include (e.g., `#feedback`, `#bug-reports`, `#general`). You can adjust the channel list at any time.
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect**. Syncly begins ingesting messages from the selected channels and continues monitoring them in real time.
+  </Step>
+</Steps>
+
+### Gmail
+
+<Steps>
+  <Step title="Go to Settings → Integrations">
+    Open **Settings → Integrations** and click **Connect** on the Gmail card.
+  </Step>
+  <Step title="Sign in with Google">
+    Syncly opens Google's OAuth consent screen. Sign in with the Gmail account that receives customer feedback and click **Allow**. Syncly requests read-only access — it does not send, modify, or delete any emails.
+  </Step>
+  <Step title="Configure filters">
+    Set filters to focus on relevant emails: by Gmail label, sender domain, or subject-line keywords. This prevents internal emails from cluttering your Feedback Hub.
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect**. Syncly imports matching threads and monitors the inbox for new messages that match your filters going forward.
+  </Step>
+</Steps>
+
+### Grain
+
+<Steps>
+  <Step title="Go to Settings → Integrations">
+    Open **Settings → Integrations** and click **Connect** on the Grain card.
+  </Step>
+  <Step title="Authenticate with Grain">
+    Syncly opens a Grain authorization window. Sign in with your Grain account and click **Allow**. Syncly gains read access to your team's call transcripts and highlights.
+  </Step>
+  <Step title="Select workspaces and date range">
+    Choose the Grain workspace(s) to sync and set a historical start date for past recordings.
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect**. Grain transcripts and highlights flow into your Feedback Hub, where Syncly's AI tags themes and sentiment across all call content.
+  </Step>
+</Steps>
+
+### Gong
+
+<Steps>
+  <Step title="Go to Settings → Integrations">
+    Open **Settings → Integrations** and click **Connect** on the Gong card.
+  </Step>
+  <Step title="Authenticate with Gong">
+    Syncly opens a Gong OAuth window. Sign in as a Gong admin — admin access is required for Syncly to read call transcripts across your team. Click **Allow**.
+  </Step>
+  <Step title="Configure call filters">
+    Optionally filter by call type (e.g., customer success, sales), team, or date range to focus Syncly on the calls most relevant to customer feedback.
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect**. Gong call transcripts begin flowing into Syncly alongside your other feedback sources, giving you direct voice-of-customer signal from sales and CS conversations.
+  </Step>
+</Steps>
+
+### Google Play
+
+<Steps>
+  <Step title="Go to Settings → Integrations">
+    Open **Settings → Integrations** and click **Connect** on the Google Play card.
+  </Step>
+  <Step title="Link your Google Play Console account">
+    Syncly redirects you to Google OAuth. Sign in with the Google account that has access to your app's Google Play Console. Grant Syncly read access to reviews.
+  </Step>
+  <Step title="Select your app">
+    If your Google Play Console account contains multiple apps, select the one(s) you want Syncly to monitor.
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect**. Syncly imports all existing reviews and continuously monitors for new ones, pulling in the review text, star rating, and device/version metadata.
+  </Step>
+</Steps>
+
+## What Data Flows In
+
+| Platform | Data Imported |
+|---|---|
+| Slack | Message text, channel name, timestamp, author ID (anonymized) |
+| Discord | Message text, channel name, timestamp, author ID (anonymized) |
+| Gmail | Email subject, body text, sender domain, received date |
+| Grain | Full call transcript, speaker labels, Grain highlights, call date |
+| Gong | Full call transcript, speaker labels, Gong AI scorecard fields, call date |
+| Google Play | Review text, star rating, app version, device type, review date |
+
+<Note>
+For social video platforms — including YouTube, TikTok, Instagram, and Twitter/X — visit [Syncly Social](/product/social/overview). Syncly Social is purpose-built for monitoring public video and social content, running competitive analysis, discovering creators, and tracking campaign performance across social channels.
+</Note>

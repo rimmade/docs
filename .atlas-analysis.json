@@ -1,0 +1,140 @@
+{
+  "projectType": "saas",
+  "projectName": "Syncly",
+  "projectDescription": "Syncly is an AI-powered customer intelligence suite that centralizes feedback from every channel, surfaces actionable insights, and tracks brand performance across social video platforms.",
+  "theme": "willow",
+  "primaryColor": "#5d47c0",
+  "lightColor": "#ab59a3",
+  "darkColor": "#f4eef5",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Account Setup",
+            "pages": [
+              "getting-started/create-account",
+              "getting-started/workspace",
+              "getting-started/invite-team",
+              "getting-started/plans-billing"
+            ]
+          },
+          {
+            "group": "Connecting Data",
+            "pages": [
+              "getting-started/integrations-overview",
+              "getting-started/connect-support-tools",
+              "getting-started/connect-crm",
+              "getting-started/connect-surveys",
+              "getting-started/connect-social",
+              "getting-started/import-csv"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Using Syncly",
+        "groups": [
+          {
+            "group": "Feedback Intelligence",
+            "pages": [
+              "product/feedback-hub",
+              "product/auto-tagging",
+              "product/sentiment-analysis",
+              "product/trending-topics",
+              "product/insight-explorer"
+            ]
+          },
+          {
+            "group": "AI Features",
+            "pages": [
+              "product/hey-syncly",
+              "product/smart-brief",
+              "product/cross-analysis"
+            ]
+          },
+          {
+            "group": "Dashboards & Reports",
+            "pages": [
+              "product/dashboards",
+              "product/reports",
+              "product/automated-workflows"
+            ]
+          },
+          {
+            "group": "Syncly Social",
+            "pages": [
+              "product/social/overview",
+              "product/social/social-listening",
+              "product/social/creator-discovery",
+              "product/social/competitive-analysis",
+              "product/social/campaign-tracking"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help & Support",
+        "groups": [
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "support/faq",
+              "support/troubleshooting",
+              "support/contact"
+            ]
+          },
+          {
+            "group": "Account & Data",
+            "pages": [
+              "support/data-privacy",
+              "support/export-data",
+              "support/security"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Unified feedback hub aggregating support tickets, surveys, reviews, and social comments",
+    "AI auto-tagging and sentiment analysis for automatic feedback categorization",
+    "Hey Syncly — natural language AI chat for querying customer data",
+    "Trending topics detection for real-time issue surfacing",
+    "Smart Brief — AI-generated summaries of dashboard metrics",
+    "One-click reports shareable across teams",
+    "Automated workflows for insight distribution",
+    "Cross-analysis to reveal relationships between feedback metrics",
+    "Syncly Social — video social listening AI for brand monitoring",
+    "Creator/influencer discovery and campaign tracking",
+    "Competitive social video analysis",
+    "19+ native integrations including Zendesk, Intercom, Salesforce, HubSpot, Jira, and more"
+  ],
+  "publicApiSurface": [
+    "Feedback Hub (collect and view feedback across channels)",
+    "Auto-Tagging (AI-powered feedback categorization)",
+    "Sentiment Analysis (positive/neutral/negative scoring)",
+    "Trending Topics (real-time issue surfacing)",
+    "Insight Explorer (deep-dive feedback exploration)",
+    "Hey Syncly (natural language Q&A on customer data)",
+    "Smart Brief (AI-generated metric summaries)",
+    "Cross-Analysis (multi-metric relationship mapping)",
+    "Dashboards (visual feedback monitoring)",
+    "One-Click Reports (shareable PDF/formatted reports)",
+    "Automated Workflows (rules-based insight sharing)",
+    "Social Listening (brand mention monitoring across 10+ platforms)",
+    "Creator Discovery (influencer search and evaluation)",
+    "Competitive Analysis (competitor social strategy tracking)",
+    "Campaign Tracking (influencer campaign performance monitoring)",
+    "Zapier Integration (connect to 5,000+ apps)",
+    "CSV/Excel Import (bulk data upload)"
+  ]
+}

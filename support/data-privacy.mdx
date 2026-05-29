@@ -1,0 +1,69 @@
+---
+title: "Data Privacy and Compliance at Syncly"
+sidebarTitle: "Data Privacy"
+description: "Learn how Syncly collects, processes, and protects your customer data — including compliance certifications, your rights, and sub-processor disclosures."
+---
+
+Syncly is built on the principle that your customer data belongs to you. The platform processes your feedback to generate AI-powered insights, and every part of how Syncly handles that data — from collection to deletion — is designed with privacy and enterprise-grade compliance in mind. This page explains what data Syncly collects, how it is used, and what rights you have as a customer.
+
+## What Data Syncly Collects
+
+Syncly collects the following categories of data when you use the platform:
+
+- **Customer feedback text:** The content of feedback items ingested from your connected integrations — support tickets, survey responses, app reviews, call transcripts, and similar sources. This is the core data that Syncly's AI analyzes to generate insights.
+- **Feedback metadata:** Attributes associated with each feedback item, such as submission date, source channel, customer identifier (if provided), and assigned tags.
+- **Integration credentials:** API keys, OAuth tokens, and other authentication credentials required to connect Syncly to third-party tools. These are stored in encrypted form and are never exposed in the Syncly interface or logs.
+- **User account information:** Names, email addresses, workspace configuration, and usage activity for users of the Syncly platform itself (your team members, not your end customers).
+
+<Note>
+  Syncly does not require you to upload personally identifiable information (PII) about your end customers. You control what data you send to Syncly through your integration configurations. If your feedback data contains PII, Syncly recommends reviewing your data minimization practices before connecting sources.
+</Note>
+
+## How Syncly Uses Your Data
+
+Syncly uses your data for one purpose: **to provide you with AI-powered customer intelligence insights within your workspace.**
+
+Specifically:
+
+- Your feedback data is processed by Syncly's AI models to perform auto-tagging, sentiment analysis, trend detection, and to power Hey Syncly AI Chat responses.
+- **Your data is never used to train shared or foundational AI models.** AI inference runs on your data within your workspace context only. No customer's data influences the AI behavior seen by another customer's workspace.
+- Syncly uses your account and usage data to operate the platform, authenticate users, deliver support, and improve the product experience at an aggregate, anonymized level.
+
+## Data Residency and Storage
+
+Syncly stores customer data on cloud infrastructure hosted in the United States by default. Enterprise customers with specific data residency requirements — such as EU-only storage — can discuss regional storage options with the Syncly sales team. Contact us at [syncly.app/demo](https://syncly.app/demo) to explore available configurations.
+
+Data is retained for the duration of your active subscription. Upon account cancellation or a deletion request, Syncly deletes your workspace data in accordance with its data retention policy. See **Your Rights** below for how to request deletion.
+
+## Compliance Commitments
+
+Syncly is built to enterprise-grade privacy and security standards:
+
+- **SOC 2 Type II:** Syncly maintains SOC 2 Type II compliance, which means an independent auditor has verified that Syncly's security, availability, and confidentiality controls meet the AICPA's Trust Services Criteria.
+- **GDPR Readiness:** Syncly is designed to support GDPR compliance for customers who process data about EU residents. This includes support for data subject access requests, data deletion, and Data Processing Agreements (DPA).
+- **Encryption:** All data is encrypted in transit using TLS 1.2 or higher and encrypted at rest using AES-256. See the [Security](/support/security) page for full technical details.
+
+<Note>
+  Enterprise customers can request a Data Processing Agreement (DPA) to formalize the data controller / data processor relationship between their organization and Syncly. Contact the [support team](/support/contact) or your account manager to request a DPA.
+</Note>
+
+## Your Rights as a Customer
+
+As a Syncly customer, you have the following rights with respect to your data:
+
+- **Access:** You can request a copy of the data Syncly holds about your workspace and account.
+- **Correction:** If any account or workspace data is inaccurate, you can update it directly in **Settings** or request a correction through support.
+- **Deletion:** You can request deletion of your workspace data at any time. Syncly will process deletion requests in accordance with its data retention policy and applicable law. Some data may be retained for legal or contractual obligations.
+- **Portability:** You can export your feedback data, reports, and analysis results at any time using Syncly's export features. See the [Export Data](/support/export-data) guide for instructions.
+
+To submit a data access, correction, or deletion request, contact the [Syncly Support team](/support/contact) with your workspace name and the email address associated with your account.
+
+## Sub-Processors
+
+Syncly uses a limited number of third-party service providers (sub-processors) to operate the platform. These include:
+
+- **Cloud infrastructure providers:** Syncly hosts its infrastructure on major cloud platforms (such as AWS or Google Cloud) that provide compute, storage, and networking services. These providers are contractually bound to Syncly's data protection requirements.
+- **AI inference services:** Syncly may use third-party AI model APIs to power specific inference tasks. In all cases, data sent to these services is used only for the specific inference request and is not retained or used for model training by the sub-processor.
+- **Analytics and monitoring tools:** Syncly uses internal monitoring tools to ensure platform reliability. These tools process aggregated, anonymized operational data only.
+
+Syncly reviews sub-processors for compliance with privacy standards and maintains Data Processing Agreements with each. Enterprise customers can request the current sub-processor list by contacting [Syncly Support](/support/contact).

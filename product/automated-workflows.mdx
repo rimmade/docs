@@ -1,0 +1,99 @@
+---
+title: "Automate Insight Sharing with Syncly Workflows"
+sidebarTitle: "Automated Workflows"
+description: "Set up rules-based workflows to automatically send alerts, reports, and notifications via Slack or email when key customer intelligence conditions are met."
+---
+
+Staying on top of customer signals shouldn't require someone to check a dashboard every hour. Syncly's automated workflows let you define the conditions that matter to your business — a sentiment drop, a spike in a critical tag, a new trending topic — and automatically deliver the right information to the right people the moment those conditions are met. Whether you want a Slack ping when satisfaction dips or a weekly digest landing in leadership's inbox every Monday, workflows handle the distribution so your team can focus on acting rather than monitoring.
+
+## What Are Automated Workflows?
+
+An automated workflow is a rule you configure in Syncly that connects a **trigger** to an **action**. When the trigger condition is satisfied — for example, your sentiment score falls below a threshold you set — Syncly fires the action you've chosen, such as posting a message in a Slack channel or creating a Jira ticket. Workflows run continuously in the background, evaluating incoming feedback and scheduled checks without any manual intervention.
+
+You can build workflows for real-time alerts, scheduled digest reports, project management integrations, and more.
+
+## Common Workflow Use Cases
+
+These are some of the most popular ways teams use Syncly workflows to automate their customer intelligence operations:
+
+- **CX sentiment alert** — notify the CX team's Slack channel immediately when overall sentiment drops below 60%, so they can investigate and respond before the issue compounds.
+- **Weekly leadership digest** — generate and email a full report to leadership every Monday at 9:00 am, covering the previous week's top trends and sentiment summary.
+- **Jira ticket on trending topic** — automatically create a Jira ticket in the product backlog when a trending topic about a specific feature reaches a volume threshold, ensuring nothing gets lost between customer feedback and engineering.
+- **PM tag spike alert** — email the responsible product manager when the volume of a specific tag — for example, *"slow load time"* or *"billing confusion"* — spikes beyond its normal baseline.
+
+## Create a Workflow
+
+<Steps>
+  <Step title="Navigate to Workflows">
+    Go to **Settings → Workflows → New Workflow**. The workflow builder opens with the trigger and action panels side by side.
+  </Step>
+  <Step title="Name your workflow">
+    Give your workflow a clear, descriptive name — for example, *"Sentiment Drop → CX Slack Alert"* or *"Monday Leadership Digest"*. A good name makes it easy to manage and troubleshoot your workflows later.
+  </Step>
+  <Step title="Choose a trigger">
+    Select the event or condition that will fire the workflow. Available triggers include:
+
+    - **Sentiment Threshold** — fires when your overall or segment-specific sentiment score crosses a value you define (e.g., drops below 60% or rises above 80%).
+    - **Trending Topic Detected** — fires when a new topic emerges or an existing topic's velocity exceeds a threshold within a given time window.
+    - **Schedule** — fires on a recurring calendar basis: daily at a set time or weekly on a chosen day and time.
+    - **Tag Volume Spike** — fires when a specific tag's mention count increases by more than a percentage you define relative to its recent baseline.
+  </Step>
+  <Step title="Choose an action">
+    Select what Syncly should do when the trigger fires. Available actions include:
+
+    - **Send Slack message** — post a message to any connected Slack channel, with an auto-generated summary of the triggering condition.
+    - **Send email** — deliver a formatted alert or report to one or more email addresses.
+    - **Create Jira ticket** — open a ticket in a Jira project you specify, pre-populated with context from Syncly.
+    - **Create Linear issue** — open an issue in a Linear team, useful for product and engineering teams running on Linear.
+  </Step>
+  <Step title="Configure the trigger conditions and action details">
+    Fill in the specifics for both sides of the workflow:
+
+    - **Trigger conditions** — set the exact threshold, tag, topic, schedule time, or segment the trigger should apply to.
+    - **Action details** — specify the Slack channel, email recipients, Jira project key, issue title template, message body, and any other action-specific fields.
+
+    Syncly shows a live preview of what the message or issue will look like when it fires.
+  </Step>
+  <Step title="Enable the workflow">
+    Toggle the workflow to **Active** and click **Save**. Syncly begins evaluating the trigger immediately. You can return to **Settings → Workflows** at any time to pause, edit, or delete the workflow.
+  </Step>
+</Steps>
+
+## Trigger Types
+
+| Trigger | Description | Typical Use |
+|---|---|---|
+| **Sentiment Threshold** | Fires when sentiment crosses a defined percentage boundary | Alert CX team to declining satisfaction in real time |
+| **Tag Volume Spike** | Fires when a tag's mention count jumps beyond a defined baseline percentage | Flag emerging product issues to the responsible PM |
+| **Trending Topic** | Fires when a new topic appears or an existing topic's velocity surges | Surface unexpected customer themes before they escalate |
+| **Schedule** | Fires at a recurring day and time you configure | Deliver weekly or daily digest reports automatically |
+| **New Feedback Source Connected** | Fires when a new integration is authorized and begins sending data | Notify an admin to configure tagging rules for the new source |
+
+## Action Types
+
+| Action | Description | Typical Use |
+|---|---|---|
+| **Slack Notification** | Posts a message to a specified Slack channel | Real-time alerts for CX, product, or leadership channels |
+| **Email Alert** | Sends a formatted email to one or more recipients | Stakeholder digests, executive summaries, or PM alerts |
+| **Jira Issue** | Creates a ticket in a designated Jira project | Route customer-reported bugs or feature requests to engineering |
+| **Linear Issue** | Creates an issue in a designated Linear team | Product and engineering teams using Linear for sprint planning |
+| **Report Generation** | Generates a full Syncly report and attaches or links it in the notification | Automatically include data context alongside alerts |
+
+## Manage and Pause Workflows
+
+All your workflows live in **Settings → Workflows**. From the list view you can:
+
+- **Pause** a workflow by toggling it to Inactive — it stops evaluating triggers but retains all its configuration.
+- **Edit** a workflow to adjust trigger thresholds, add recipients, or change the action type.
+- **Duplicate** a workflow to use it as a starting point for a similar rule without rebuilding from scratch.
+- **Delete** a workflow permanently when it's no longer needed.
+
+Syncly also logs every time a workflow fires in the **Activity** column, so you can verify that alerts are going out as expected and troubleshoot any that aren't.
+
+<Tip>
+  If you're new to Syncly workflows, start with a single **weekly digest** workflow — pick a schedule trigger for Monday morning, choose email or Slack as the action, and add your team as recipients. Getting comfortable with that simple, low-stakes workflow first makes it much easier to design and tune more complex real-time alert rules once you understand how your data behaves.
+</Tip>
+
+<Note>
+  **Zapier integration:** If you need to connect Syncly to a tool that isn't natively supported — for example, HubSpot, Notion, or Microsoft Teams — Syncly's Zapier integration lets you use any workflow trigger as a Zap trigger and route it to thousands of third-party apps. Enable it under **Settings → Integrations → Zapier** to expand your automation options beyond the built-in action types.
+</Note>

@@ -1,0 +1,128 @@
+---
+title: "Trending Topics: Spot Emerging Customer Issues in Real Time"
+sidebarTitle: "Trending Topics"
+description: "Syncly monitors feedback volume across every tag and topic continuously, surfacing unusual spikes before they become crises. Stay ahead of emerging issues as they happen."
+---
+
+By the time a customer problem appears in your support queue metrics or NPS scores, it has often been building for days. Trending Topics closes that gap. Syncly continuously monitors the volume of feedback flowing into each topic and tag, compares it against historical baselines, and surfaces any topic experiencing unusual growth — often within hours of a new issue emerging. Whether it's a newly shipped bug, an unexpected billing confusion, or a competitor feature customers are requesting, Trending Topics makes sure you hear about it immediately.
+
+## What Trending Topics Does
+
+Trending Topics answers one question: **"What are customers talking about more than usual right now?"**
+
+It does this by watching volume signals across every dimension of your feedback data — tags, keywords, phrases, and topics — and flagging any that show statistically significant growth compared to their historical baseline. It is not simply a list of your most-discussed topics; it is a list of topics whose discussion is *accelerating*.
+
+<CardGroup cols={2}>
+  <Card title="Volume spike detection" icon="arrow-trend-up">
+    Syncly calculates a rolling baseline for every tag and topic using the past 30 days of data. When a topic's volume grows significantly above that baseline in a short window, it earns a trending badge.
+  </Card>
+  <Card title="Momentum scoring" icon="bolt">
+    Each trending topic receives a **momentum score** — a number from 1 to 100 that reflects the speed and size of the spike. A score of 90+ indicates a rapid, large spike; a score below 50 indicates a slow, steady rise worth watching.
+  </Card>
+  <Card title="Sentiment overlay" icon="face-frown">
+    Every trending topic shows the sentiment breakdown of its associated feedback. A topic trending with predominantly negative sentiment requires a very different response than one trending positively.
+  </Card>
+  <Card title="Source attribution" icon="plug">
+    See which sources are driving the spike. If "Login Error" is trending because of a sudden surge in support tickets but not in NPS responses, that tells you the issue is operationally acute but hasn't yet damaged broader satisfaction.
+  </Card>
+</CardGroup>
+
+## How Trending Is Calculated
+
+Syncly uses a **volume spike detection** algorithm that compares recent feedback volume to a rolling historical baseline.
+
+<Steps>
+  <Step title="Baseline calculation">
+    For each tag and topic, Syncly calculates the expected daily volume using a 30-day rolling average. This baseline automatically adjusts for weekly seasonality — so a Monday spike is compared to other Mondays, not to the overall daily average.
+  </Step>
+  <Step title="Spike detection">
+    Syncly compares the volume in each rolling 24-hour window against the baseline. If the current volume exceeds the baseline by a threshold that accounts for normal variance (using a standard deviation model), the topic is flagged as trending.
+  </Step>
+  <Step title="Momentum scoring">
+    The momentum score reflects both the magnitude of the spike (how much volume has increased) and the velocity (how quickly the increase happened). A topic that doubles in volume over two hours scores higher than one that doubles over two weeks.
+  </Step>
+  <Step title="Continuous updates">
+    Trending Topics refreshes every 15 minutes. As new feedback arrives, the scores and rankings update automatically. Topics drop off the trending list once their volume returns to within normal range.
+  </Step>
+</Steps>
+
+## Where to Find Trending Topics
+
+<Tabs>
+  <Tab title="Trending Topics page">
+    Navigate to **Insights → Trending Topics** from the left sidebar. The page shows a ranked list of currently trending topics, ordered by momentum score. Each row displays the topic name, momentum score, feedback volume in the current window, percentage change from baseline, and a sentiment pill.
+  </Tab>
+  <Tab title="Home dashboard widget">
+    Add the **Trending Topics** widget to your home dashboard from the widget library. It displays your top five trending topics at a glance, making it easy to spot something urgent without navigating away from your main view.
+  </Tab>
+  <Tab title="Feedback Hub banner">
+    When a high-momentum topic (score 75+) is detected, a banner appears at the top of the Feedback Hub with a one-click link to the full trending topic detail. You can dismiss the banner or click through to investigate immediately.
+  </Tab>
+</Tabs>
+
+## Investigating a Trending Topic
+
+When you spot a topic that warrants a closer look, Syncly makes it easy to move from signal to understanding in a single click.
+
+<Steps>
+  <Step title="Click the topic name">
+    On the Trending Topics page, click any topic name to open the **Trending Topic Detail** panel. This panel shows the volume chart, sentiment breakdown, top feedback examples, and the sources driving the spike.
+  </Step>
+  <Step title="Read the top feedback examples">
+    The detail panel surfaces the five most representative feedback items for this topic, selected by relevance and recency. Reading these gives you qualitative context for the quantitative spike — not just that something is trending, but why.
+  </Step>
+  <Step title="Open in Insight Explorer">
+    Click **Investigate in Insight Explorer** to open a pre-configured analysis workspace scoped to this topic and the current time window. From there you can slice the data by source, sentiment, or segment, and save your findings as a named analysis to share with your team.
+  </Step>
+</Steps>
+
+## Setting Up Trending Topic Alerts
+
+You shouldn't have to check Syncly continuously to stay on top of emerging issues. Alerts bring trending signals directly to you.
+
+<Steps>
+  <Step title="Open Alert settings">
+    Navigate to **Settings → Alerts** and click **+ New Alert**.
+  </Step>
+  <Step title="Choose the trigger">
+    Select **Trending Topic** as the alert type. You can configure the alert to fire for:
+
+    - **Any trending topic** — get notified whenever any topic crosses the trending threshold
+    - **Specific tags** — only fire when a tag you care about (e.g., "Billing" or "Data Loss") starts trending
+    - **Momentum threshold** — only fire when the momentum score exceeds a value you set (e.g., 70+)
+    - **Sentiment condition** — only fire when the trending topic skews negative
+  </Step>
+  <Step title="Choose delivery channels">
+    Select one or more notification channels:
+
+    - **Email** — delivers a summary to your inbox with topic name, momentum score, sentiment, and a direct link
+    - **Slack** — posts a message to a channel of your choice using the Syncly Slack integration
+    - **In-app** — creates a notification in the Syncly notification bell
+  </Step>
+  <Step title="Set a cooldown period">
+    Choose how long Syncly should wait before re-alerting you about the same topic. A cooldown of 4–8 hours prevents alert fatigue for slow-moving spikes while still keeping you informed about rapid new developments.
+  </Step>
+  <Step title="Save and activate">
+    Click **Save Alert**. The alert becomes active immediately and will notify you the next time the trigger conditions are met.
+  </Step>
+</Steps>
+
+<Tip>
+  Block 15 minutes every Monday morning to review the Trending Topics page before your weekly team meeting. Topics that trended over the weekend — especially those with negative sentiment — often become the most important agenda items of the week, and having the data ready lets you walk in with context instead of catching up.
+</Tip>
+
+## Example: Catching a Bug Before It Becomes a Crisis
+
+Here is a real-world scenario that illustrates how Trending Topics works in practice.
+
+> **Monday, 9:14 AM** — Your team ships a release that includes a change to the login flow.
+>
+> **Monday, 10:30 AM** — A handful of users begin submitting support tickets and leaving app store reviews mentioning that they can't log in after updating.
+>
+> **Monday, 11:00 AM** — Syncly detects that the **"Login Error"** tag is receiving 4× its normal volume over the past 45 minutes. Momentum score: 88. Sentiment: 94% Negative. A Trending Topics alert fires to your `#customer-issues` Slack channel with a direct link to the detail panel.
+>
+> **Monday, 11:05 AM** — Your on-call engineer opens Insight Explorer from the trending topic, reads the top feedback examples, confirms the pattern, and files a P1 bug ticket — all before the issue appears in any internal dashboard.
+>
+> **Monday, 2:00 PM** — A hotfix is deployed. Syncly detects the volume returning to baseline within 90 minutes and the topic drops off the trending list.
+
+This kind of rapid detection is only possible when you're listening to all your feedback channels simultaneously — which is exactly what Syncly does automatically.
